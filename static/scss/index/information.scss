@@ -1,0 +1,112 @@
+.information{
+    position: relative;
+    display: grid;
+    grid-template-columns: 1fr;
+    background-color: $light-shade;
+    column-gap: 15px;
+    row-gap: 15px;
+    @include my(30);
+    @include py(20);
+    @include tablet(){
+        grid-template-columns: repeat(2,1fr);
+    }
+    @include screen(){
+        grid-template-columns: repeat(3, 1fr);
+    }
+    #rect{
+        position: absolute;
+        background-color: #dddddd;
+        height: calc(100% + 60px);
+        width: 100%;
+        top: -30px;
+        left: 0;
+        transform: skewX(-5deg);
+        @include tablet(){
+            transform: skewX(-28deg);
+        }
+    }
+    .background{
+        position: relative;
+        grid-column-end: span 1;
+        background-size: cover;
+        background-position: center;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 35px 10px;
+        @include tablet(){
+            padding: 45px 30px;
+            &:last-child{
+                grid-column-end: span 2;
+            }
+        }
+        @include screen(){
+            padding: 71px 30px;
+            &:last-child{
+                grid-column-end: span 1;
+            }
+        }
+        &:nth-of-type(2){
+            background-image: url(/images/sender.png);
+        }
+        &:nth-of-type(3){
+            background-image: url(/images/expeditor.png);
+        }
+        &:nth-of-type(4){
+            background-image: url(/images/transporter-mob.png);
+            @include tablet(){
+                .m-button{
+                    width: 185px;            
+                }
+            }
+        }
+        .dim{
+            @include flow(0.1);
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            opacity: 0;
+            visibility: hidden;
+            top: 0;
+            left: 0;
+            background-image: linear-gradient(0deg, rgba(34, 81, 170, 0.9),rgba(34, 81, 170, 0.9));
+            z-index: 0;
+        }
+      h1,.h1{
+            color: $white;
+            font-size: rem(18);
+            margin-bottom: 13px;
+            @include tablet(){
+                font-size: rem(22);
+                margin-bottom: 8px;
+            }
+            z-index: 1;
+        }
+        .info-text{
+            color: white;
+            margin-bottom: 20px;
+            line-height: 134%;
+            z-index: 1;
+        }
+        a{
+            margin-top: auto;
+            .m-button{
+                width: 100%;  
+                @include screen(){
+                    width: 185px;
+                }   
+                .b{
+                    @include flow(0.1);
+                }
+            }
+        }
+        
+        &:hover{
+            .dim{
+                @include flow(0.1);
+                opacity: 0.7;
+                visibility: visible;
+            } 
+        }
+    }
+}

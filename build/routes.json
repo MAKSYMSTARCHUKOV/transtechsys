@@ -1,0 +1,257 @@
+[
+  {
+    "name": "about-us",
+    "path": "/about-us",
+    "component": "/home/maksym/Frontend/tts/pages/about-us.vue",
+    "chunkName": "pages/about-us",
+    "_name": "_34d054dc"
+  },
+  {
+    "name": "blog",
+    "path": "/blog",
+    "component": "/home/maksym/Frontend/tts/pages/blog.vue",
+    "chunkName": "pages/blog",
+    "_name": "_e7adb754"
+  },
+  {
+    "name": "boundries",
+    "path": "/boundries",
+    "component": "/home/maksym/Frontend/tts/pages/boundries.vue",
+    "chunkName": "pages/boundries",
+    "_name": "_1bac8b1f"
+  },
+  {
+    "path": "/cabinet",
+    "component": "/home/maksym/Frontend/tts/pages/cabinet.vue",
+    "chunkName": "pages/cabinet",
+    "children": [
+      {
+        "name": "cabinet",
+        "path": "",
+        "component": "/home/maksym/Frontend/tts/pages/cabinet/index.vue",
+        "chunkName": "pages/cabinet/index",
+        "_name": "_1ae817d7"
+      },
+      {
+        "name": "cabinet-add-car",
+        "path": "add-car",
+        "component": "/home/maksym/Frontend/tts/pages/cabinet/add-car.vue",
+        "chunkName": "pages/cabinet/add-car",
+        "_name": "_15c7a16d"
+      },
+      {
+        "name": "cabinet-add-cargo",
+        "path": "add-cargo",
+        "component": "/home/maksym/Frontend/tts/pages/cabinet/add-cargo.vue",
+        "chunkName": "pages/cabinet/add-cargo",
+        "_name": "_23269915"
+      },
+      {
+        "name": "cabinet-add-driver",
+        "path": "add-driver",
+        "component": "/home/maksym/Frontend/tts/pages/cabinet/add-driver.vue",
+        "chunkName": "pages/cabinet/add-driver",
+        "_name": "_73a1521f"
+      },
+      {
+        "name": "cabinet-car-park",
+        "path": "car-park",
+        "component": "/home/maksym/Frontend/tts/pages/cabinet/car-park.vue",
+        "chunkName": "pages/cabinet/car-park",
+        "_name": "_ccdfca64"
+      },
+      {
+        "name": "cabinet-drafts",
+        "path": "drafts",
+        "component": "/home/maksym/Frontend/tts/pages/cabinet/drafts.vue",
+        "chunkName": "pages/cabinet/drafts",
+        "_name": "_704f4686"
+      },
+      {
+        "name": "cabinet-employees",
+        "path": "employees",
+        "component": "/home/maksym/Frontend/tts/pages/cabinet/employees.vue",
+        "chunkName": "pages/cabinet/employees",
+        "_name": "_38abce8a"
+      },
+      {
+        "name": "cabinet-feedback",
+        "path": "feedback",
+        "component": "/home/maksym/Frontend/tts/pages/cabinet/feedback.vue",
+        "chunkName": "pages/cabinet/feedback",
+        "_name": "_a17069e0"
+      },
+      {
+        "name": "cabinet-find-car",
+        "path": "find-car",
+        "component": "/home/maksym/Frontend/tts/pages/cabinet/find-car.vue",
+        "chunkName": "pages/cabinet/find-car",
+        "_name": "_7e96afcb"
+      },
+      {
+        "name": "cabinet-find-cargo",
+        "path": "find-cargo",
+        "component": "/home/maksym/Frontend/tts/pages/cabinet/find-cargo.vue",
+        "chunkName": "pages/cabinet/find-cargo",
+        "_name": "_d728f01a"
+      },
+      {
+        "name": "cabinet-messages",
+        "path": "messages",
+        "component": "/home/maksym/Frontend/tts/pages/cabinet/messages.vue",
+        "chunkName": "pages/cabinet/messages",
+        "_name": "_6aeeb552"
+      },
+      {
+        "name": "cabinet-personal",
+        "path": "personal",
+        "component": "/home/maksym/Frontend/tts/pages/cabinet/personal.vue",
+        "chunkName": "pages/cabinet/personal",
+        "_name": "_06ba304b"
+      },
+      {
+        "name": "cabinet-profile",
+        "path": "profile",
+        "component": "/home/maksym/Frontend/tts/pages/cabinet/profile.vue",
+        "chunkName": "pages/cabinet/profile",
+        "_name": "_0a8ce424"
+      },
+      {
+        "name": "cabinet-rates",
+        "path": "rates",
+        "component": "/home/maksym/Frontend/tts/pages/cabinet/rates.vue",
+        "chunkName": "pages/cabinet/rates",
+        "_name": "_58fdf618"
+      },
+      {
+        "name": "cabinet-requests",
+        "path": "requests",
+        "component": "/home/maksym/Frontend/tts/pages/cabinet/requests.vue",
+        "chunkName": "pages/cabinet/requests",
+        "_name": "_64df07cf"
+      },
+      {
+        "name": "cabinet-else",
+        "path": ":else",
+        "component": "/home/maksym/Frontend/tts/pages/cabinet/_else.vue",
+        "chunkName": "pages/cabinet/_else",
+        "_name": "_675b221d"
+      }
+    ],
+    "_name": "_22282054"
+  },
+  {
+    "name": "carrier",
+    "path": "/carrier",
+    "component": "/home/maksym/Frontend/tts/pages/carrier.vue",
+    "chunkName": "pages/carrier",
+    "_name": "_04be4cf4"
+  },
+  {
+    "path": "/catalog",
+    "component": "/home/maksym/Frontend/tts/pages/catalog.vue",
+    "chunkName": "pages/catalog",
+    "children": [
+      {
+        "name": "catalog",
+        "path": "",
+        "component": "/home/maksym/Frontend/tts/pages/catalog/index.vue",
+        "chunkName": "pages/catalog/index",
+        "_name": "_3db49858"
+      },
+      {
+        "name": "catalog-id",
+        "path": ":id",
+        "component": "/home/maksym/Frontend/tts/pages/catalog/_id.vue",
+        "chunkName": "pages/catalog/_id",
+        "_name": "_ec865e80"
+      }
+    ],
+    "_name": "_130954d6"
+  },
+  {
+    "name": "expeditor",
+    "path": "/expeditor",
+    "component": "/home/maksym/Frontend/tts/pages/expeditor.vue",
+    "chunkName": "pages/expeditor",
+    "_name": "_5d644dc6"
+  },
+  {
+    "name": "find-car",
+    "path": "/find-car",
+    "component": "/home/maksym/Frontend/tts/pages/find-car.vue",
+    "chunkName": "pages/find-car",
+    "_name": "_ef2ba518"
+  },
+  {
+    "name": "find-cargo",
+    "path": "/find-cargo",
+    "component": "/home/maksym/Frontend/tts/pages/find-cargo.vue",
+    "chunkName": "pages/find-cargo",
+    "_name": "_77563f5c"
+  },
+  {
+    "name": "find-us",
+    "path": "/find-us",
+    "component": "/home/maksym/Frontend/tts/pages/find-us.vue",
+    "chunkName": "pages/find-us",
+    "_name": "_1bbb7c2e"
+  },
+  {
+    "path": "/news",
+    "component": "/home/maksym/Frontend/tts/pages/news.vue",
+    "chunkName": "pages/news",
+    "children": [
+      {
+        "name": "news",
+        "path": "",
+        "component": "/home/maksym/Frontend/tts/pages/news/index.vue",
+        "chunkName": "pages/news/index",
+        "_name": "_e80f376c"
+      },
+      {
+        "name": "news-id",
+        "path": ":id",
+        "component": "/home/maksym/Frontend/tts/pages/news/_id.vue",
+        "chunkName": "pages/news/_id",
+        "_name": "_7bf21d9c"
+      }
+    ],
+    "_name": "_06bb7f07"
+  },
+  {
+    "name": "partners",
+    "path": "/partners",
+    "component": "/home/maksym/Frontend/tts/pages/partners.vue",
+    "chunkName": "pages/partners",
+    "_name": "_2aab16df"
+  },
+  {
+    "name": "permits",
+    "path": "/permits",
+    "component": "/home/maksym/Frontend/tts/pages/permits.vue",
+    "chunkName": "pages/permits",
+    "_name": "_77c20db4"
+  },
+  {
+    "name": "sender",
+    "path": "/sender",
+    "component": "/home/maksym/Frontend/tts/pages/sender.vue",
+    "chunkName": "pages/sender",
+    "_name": "_af3d932e"
+  },
+  {
+    "name": "tender",
+    "path": "/tender",
+    "component": "/home/maksym/Frontend/tts/pages/tender.vue",
+    "chunkName": "pages/tender",
+    "_name": "_c6aab0f0"
+  },
+  {
+    "name": "main",
+    "path": "/",
+    "component": "/home/maksym/Frontend/tts/pages/index.vue",
+    "chunkName": "pages/index",
+    "_name": "_dd7eba64"
+  }
+]

@@ -1,0 +1,59 @@
+.easy{
+    @include px(10);
+    @include tablet(){
+        margin-bottom: 100px;
+        @include px(130);
+    }
+    @include extra(){
+        @include px(200);
+    }
+  h1,.h1{
+        font-size: rem(22);
+        text-align: center;
+        margin-bottom: 25px;
+        color: black;
+        @include tablet(){
+            margin-bottom: 45px;
+            font-size: rem(25);
+        }
+        @include screen(){
+            font-size: rem(30);
+        }
+    }   
+    .islands{
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        column-gap: 10px;
+        row-gap: 30px;
+        @include tablet(){
+            grid-template-columns: repeat(5, 1fr);
+            column-gap: 20px;
+            row-gap: 60px;
+        }
+        &:nth-of-type(1){
+            margin-bottom: 30px;
+            @include tablet(){
+                margin-bottom: 60px;
+            }
+        }
+        .island{
+            padding: 18px 20px;
+            box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.15);
+            .img{
+                height: 55px;
+                margin-bottom: 10px;
+                margin-top: -40px;
+            }
+            p{
+                text-align: center;
+                font-size: rem(16);
+            }
+            &:nth-child(2n){
+                margin-top: 20px;
+            }
+            &:nth-child(2n+1){
+                margin-bottom: 20px;
+            }
+        }
+    }
+}

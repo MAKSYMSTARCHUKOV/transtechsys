@@ -1,0 +1,63 @@
+.search-bar-container{
+    display: grid;
+    grid-template-columns: minmax(300px,340px);
+    column-gap: 12px;
+    row-gap: 10px;        
+    z-index: 51;        
+    @include tablet(){
+        padding-bottom: 20px;    
+    }
+  h1,.h1{
+        font-weight: 800;
+        font-size: rem(22);
+        text-align: center;
+        text-transform: uppercase;
+        grid-column: 1 / -1;
+        padding-bottom: 10px;
+        @include tablet(){
+            font-size: rem(30);
+        }
+    }     
+    .bordered{
+        border: 1px solid $input;
+        padding-left: 10px;
+        span{
+            font-weight: 600;
+            color: black;
+            font-size: rem(14);
+        }
+        .inputs{
+            span{
+                font-weight: normal;
+                color: $brand;
+            }
+            .m-input{
+                width: 40px;
+            }
+        }
+    }
+    .datepickers{
+        grid-column: 1 / -1;
+        @include tablet(){
+            grid-column: 2 / span 1;
+        }
+        display: grid;
+        column-gap: 10px;
+        grid-template-columns: repeat(2,minmax(47%,1fr));
+    }
+    .mx-datepicker{
+        width: auto;
+        max-width: 100% !important;
+    }   
+    .find-button{
+        grid-column: 1 / -1;
+        .m-button{
+            position: relative !important;
+            bottom: 0 !important;
+            width: 100% !important;
+        }
+    }
+@include tablet(){           
+    grid-template-columns: repeat(2, minmax(200px,240px)); 
+}
+}

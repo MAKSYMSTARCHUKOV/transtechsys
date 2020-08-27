@@ -1,0 +1,697 @@
+@import '~/static/scss/default.scss';
+@import '~/static/scss/role.scss';
+@import '~/static/scss/flags32-both.scss';
+
+.r-main{     
+    .r-aside{
+        margin-top: -80px;
+        padding-top: 80px;
+        display: none;
+        background-color: $brand;
+        grid-column: 1 / span 1;
+        flex-shrink: 0;
+        @include flow;
+        overflow: hidden;
+        @include screen(){
+            display: block;
+            width: 205px;
+        }
+        &.shrink{
+            @include flow;
+            @include screen(){
+                width: 45px;                
+            }
+            .nav-menu{
+                @include flow;
+                margin-left: 0;
+            }
+        }
+        .company-logo{
+            margin-bottom: 50px;
+            @include tablet(){
+                margin-bottom: 120px;
+            }
+        }
+        .nav-menu{
+            margin-left: 50px;
+            position: relative;
+            z-index: 1;
+            padding-bottom: 60px;
+            @include flow;
+            @include tablet(){
+                margin-left: 20px;
+            }
+            .nav-item{
+                display: flex;
+                align-items: center;
+                background-color: $brand;
+                padding-left: 15px;            
+                position: relative;
+                flex-wrap: nowrap;
+                &:not(:last-child){
+                    margin-bottom: 25px;
+                }
+                &::before{
+                    @include flow(0.1);
+                    position: absolute;
+                    content: '';
+                    background-color: white;
+                    width: 50px;
+                    height: 1px;
+                    left: 0px;
+                    z-index: -1;
+                    @include tablet(){
+                        width: 130px;
+                        height: 1px;
+                        left: 0px;                   
+                    }
+                }
+                .menu-link{
+                    &.soon{
+                        position: relative;
+                        overflow: visible;
+                        &::after{
+                            position: absolute;
+                            top: -15px;
+                            right: -20px;
+                            font-size: rem(10);
+                            content: 'скоро';
+                            text-transform: uppercase;
+                            background-color: white;
+                            color: $brand;
+                            font-weight: 700;
+                            padding: 0 3px;
+                            border-radius: 3px;
+                        }
+                    }
+                }
+                img{
+                    @include flow(0.15);
+                    width: 20px;
+                    margin-right: 8px;
+                    opacity: 0.6;
+                    flex-shrink: 0;
+                }
+                a{
+                    @include flow(0.15);
+                    padding: 0;
+                    opacity: 0.6;
+                    &:not(.sub-menu){
+                        overflow: hidden;
+                    white-space: nowrap;
+                    }
+                }
+                &:hover,&.current{                
+                    img{
+                        @include flow(0.15);
+                        opacity: 1;
+                    }
+                    a:not(.sub-menu){
+                        @include flow(0.15);
+                        opacity: 1;
+                        border-color: transparent;
+                    }                    
+                }
+                &.current{
+                    &:before{
+                        @include flow(0.1);
+                        left: -50px;
+                        z-index: -1;
+                        @include tablet(){
+                            left:-130px;                   
+                        }
+                    }
+                }
+                &.combine{
+                    height: 25px;
+                    @include flow(0.15);
+                    flex-wrap: wrap;
+                    .menu-link{
+                        .arrow{
+                            height: 12px;
+                            transform: rotate(-90deg);
+                            @include flow;                        
+                        }
+                    }
+                    .sub-menus{                        
+                        opacity: 0;
+                        visibility: hidden;
+                        margin-left: 28px;
+                        @include flow(0.15);
+                        &.shrink{
+                            margin-left: 0;
+                        }
+                        .sub-menu{
+                            margin-top: 10px;
+                        }
+                    }
+                    &:hover,&.current{
+                        height: 85px;          
+                        @include flow(0.15);
+                        .menu-link{
+                            .arrow{
+                                @include flow;
+                                transform: rotate(0deg);
+                            }
+                        }
+                        .sub-menus{
+                            opacity: 1;
+                            visibility: visible;
+                            @include flow(0.15);
+                            .sub-menu{
+                                opacity: 0.6;
+                                @include flow(0.15);
+                                &:hover,&.current{
+                                    @include flow(0.15);
+                                    opacity: 1;
+                                    border-color: transparent;
+                                }
+                            }
+                        }
+                    }
+                    &:before{
+                        top: 12px;
+                    }
+                }
+            }
+        }
+    }
+    .m-main{
+        margin-top: 0;
+        grid-column: 1 / span 1;
+        width: 100%;
+        @include screen(){
+            grid-column-start: 2;
+            margin-top: -80px;
+        }
+        .m-background{
+            position: relative;
+            flex-shrink: 0;
+            height: 230px;            
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            justify-content: center;
+            @include tablet(){
+                height: 360px;
+                justify-content: flex-start;
+            }
+            @include screen(){
+                height: 410px;
+            }
+            .company-logo{
+                z-index: 998;
+                position: absolute;
+                top: 50px;
+                left: 50%;
+                transform: translateX(-50%);
+                @include tablet(){
+                    left: 130px;
+                    top: 50%;
+                    transform: translateY(-50%);
+                }
+            }
+            &-dim{
+                position: absolute;
+                width: 100%;
+                height: 100%;
+                top: 0;
+                left: 0;
+                background-color: $black;
+                opacity: 0.6;
+                .-mob{
+                    @include tablet(){
+                        display: none !important;
+                    }
+                }
+            }
+        }
+        .company-profile{            
+            padding-top: 60px;
+            @include px(0);
+            @include tablet(){
+                padding-top: 20px;
+            }
+            .profile{
+                grid-column: 1 / span 1;
+                @include px(10);  
+                @include tablet(){
+                    @include px(30);
+                &.images{
+                    @include my(20);
+                    @include tablet(){
+                        @include my(30);
+                    }
+                }
+                &.button{
+                    margin-top: 20px;
+                    margin-bottom: 30px;
+                    @include tablet(){
+                        margin-top: 30px;
+                    }
+                }                
+            } 
+            .all-cars{
+                &-header{
+                    flex-direction: column;
+                    @include tablet(){
+                        flex-direction: row;
+                        justify-content: space-between;
+                    }                    
+                }
+            }           
+            h1{
+                text-align: center;
+                font-size: rem(18);
+                margin-bottom: 14px;
+                @include tablet(){
+                    margin-bottom: 14px;
+                    text-align: left;
+                }
+            }
+            .edit-data{
+                background-color: $light-shade;
+                padding: 22px 10px;
+                display: grid;
+                row-gap: 20px;
+                column-gap: 20px;
+                grid-template-columns: 100%;
+                @include tablet(){
+                    grid-template-columns: repeat(2, 1fr);
+                    row-gap: 22px;
+                    @include px(15);
+                }
+                @include screen(){
+                    @include px(20);
+                }
+                &.opaq{
+                    background-color: transparent;
+                }
+                .bio{
+                    display: grid;
+                    grid-column: 1 / -1;
+                    grid-template-columns: 1fr;
+                    row-gap: 20px;
+                    @include tablet(){
+                        column-gap: 20px;
+                        grid-template-columns: 1fr max-content;
+                    }
+                    #avatar{
+                        grid-column: 1 / -1;
+                        grid-row: 1 / span 1;
+                        @include tablet(){
+                            grid-column-start: 2;
+                            grid-row-end: span 2;
+                        }
+                    }
+                    #fio,#role{
+                        grid-column: 1 / span 1;
+                    }
+                }
+                .phones{
+                    grid-column: 1 / -1;
+                    display: grid;
+                    row-gap: 20px;
+                    column-gap: 20px;
+                    grid-template-columns: 1fr;
+                    @include tablet(){
+                        grid-template-columns: repeat(2, 1fr);
+                    }
+                    .p-container{
+                        position: relative;
+                        .choose{
+                            position: absolute;
+                        }
+                    }
+                }
+                .role-input{
+                    margin-bottom: 20px;
+                    &#email{
+                        grid-column: 1 / -1;
+                    }
+                    h3{
+                        font-weight: normal;
+                        font-size: rem(18);
+                        color: $brand;
+                        margin-bottom: 8px;
+                        text-transform: uppercase;
+                    }
+                    .ok,.edit{
+                        height: 30px;
+                        margin-left: 10px;
+                        @include tablet(){
+                            height: 16px;    
+                        }
+                    }
+                    .description{
+                        color: #858585;
+                        margin-bottom: 10px;    
+                    }
+                    .m-input{
+                        .icon-slot{
+                            img{
+                                height: 16px;
+                                
+                            }
+                        }
+                        &[data-active]{
+                            .media{
+                                display: flex !important;
+                            }   
+                        }
+                        .prepend{
+                            .media{
+                                @include flow(0.15);
+                                background-color: $dark-shade;
+                                width: 26px;
+                                height: 26px;
+                                border-radius: 50%;
+                                padding: 4px;
+                                margin: 0 2px;
+                                &:not(.active){
+                                    display: none;
+                                }
+                                img{
+                                    height: 100%;
+                                    margin: 0;
+                                }
+                                &.active{
+                                    @include flow(0.15);
+                                    &#telegram{
+                                        background-color: $brand;}
+                                    &#whatsapp{
+                                        background-color: $green;
+                                    }
+                                    &#viber{
+                                        background-color: $viber;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                    .remove-number{
+                        height: 35px;
+                        width: 35px;
+                        background-color: $brand;
+                        margin-left: 0;
+                        display: flex;
+                        @include tablet(){
+                            margin-left: 5px;
+                        }
+                        img{
+                            height: 25px;
+                        }
+                    }
+                    &.add-number{
+                        img{
+                            height: 18px;
+                        }
+                        span{
+                            font-size: rem(10);
+                            color: $brand;
+                            text-transform: uppercase;
+                        }
+                    }
+                    .docs{
+                        margin-top: -12px;
+                        flex-wrap: wrap;
+                        .m-document{
+                            margin-top: 12px;
+                            min-width: 100px;
+                            &:not(:last-child){
+                                margin-right: 12px;
+                            }
+                        }
+                    }
+                }
+            }
+        } 
+        &.white-background{
+            .edit-data{
+                background-color: transparent;
+                padding: 0;
+                .role-input{
+                    &#buttons{
+                        grid-column: 1 / -1;
+                            .m-button{
+                                width: 100% !important;
+                                left: 50% !important;
+                                @include tablet(){
+                                    width: 150px !important
+                                }
+                            }
+                        }
+                }
+                &.b-shadow{
+                    border-top: 5px solid $brand;
+                    box-shadow: 2px 2px 15px rgba(#000000, 0.08);
+                    .role-input{                       
+                        grid-column: 1 / -1;                        
+                        .d-info{  
+                            display: grid;
+                            grid-template-columns: 80px 1fr;
+                            padding: 15px 34px;
+                            row-gap: 14px;
+                            @include tablet(){
+                                grid-template-columns: min-content 1fr 1fr 1fr 46px;
+                                @include px(20);
+                            }
+                            &:nth-child(2n){
+                                background-color: $mid-grey;
+                            }                       
+                            .d-item{
+                                @include mx(7);
+                                @include tablet(){
+                                    @include mx(12);
+                                    grid-column-end: span 1;
+                                }
+                                &.d-second{
+                                    grid-column-start: 2;
+                                    @include tablet(){
+                                    }
+                                }
+                                &:nth-of-type(1){
+                                    @include tablet(){
+                                        grid-column-start: 1;    
+                                    }
+                                    
+                                }
+                                &:nth-of-type(2){
+                                    @include tablet(){
+                                        grid-column-start: 2;    
+                                    }
+                                    
+                                }
+                                &:nth-of-type(3){
+                                    @include tablet(){
+                                        grid-column-start: 3;    
+                                    }
+                                    
+                                }
+                                &:nth-of-type(4){
+                                    @include tablet(){
+                                        grid-column-start: 4;    
+                                    }
+                                    
+                                }
+                                &:nth-of-type(5){
+                                    @include tablet(){
+                                        grid-column-start: 5;    
+                                    }
+                                    
+                                }
+                            }
+                            .d-avatar{
+                                width: 45px;
+                                height: 45px;
+                                border-radius: 50%;
+                                background-size: cover;
+                                background-position: center;
+                                box-shadow: 2px 2px 15px rgba(#000000, 0.08);
+                                justify-self: center;
+                                position: relative;
+                                .online{
+                                    position: absolute;
+                                    top: 35px;
+                                    right: 1px;
+                                    width: 12px;
+                                    height: 12px;
+                                    background-color: $green;
+                                    border-radius: 50%;
+                                    border: 2px solid white;
+                                }
+                            }
+                            .d-role{
+                                grid-row: 2;
+                                color: $brand;
+                                @include tablet(){
+                                    grid-row: 1;
+                                    text-align: center;
+                                }
+                            }
+                            .d-erase{
+                                grid-row: 2;
+                                img{
+                                    height: 22px;
+                                }
+                                @include tablet(){
+                                    grid-row: 1;
+                                }
+                            }
+                            .d-contacts{
+                                display: grid;
+                                grid-template-columns: 65px 1fr;
+                                row-gap: 5px;
+                                column-gap: 16px;
+                                grid-column: 1 / -1;
+                                grid-row: 3;
+                                @include tablet(){
+                                    grid-template-columns: min-content 1fr;
+                                    grid-row: 1;
+                                    grid-column: 1 / -1;
+                                }
+                                a{
+                                    display: flex;
+                                    align-items: center;
+                                }
+                                .d-icons{
+                                    display: grid;
+                                    grid-template-columns: repeat(3, 21px);
+                                    column-gap: 5px;
+                                    a{
+                                        img{
+                                            height: 20px;
+                                            width: auto;
+                                        }
+                                    }
+                                }
+                                .m-container{
+                                    grid-column: 1 / -1;
+                                }
+                            }
+                        }
+                    }
+                }
+                &-info{                    
+                    img{
+                        width: 75%;
+                        height: auto;
+                        margin-bottom: 12px;
+                        @include tablet(){
+                            width: 50%;
+                            margin-bottom: 40px;
+                        }
+                    }
+                    h3{
+                        color: $dark-shade;
+                        text-align: center;
+                        text-transform: none;
+                        font-size: rem(18);
+                        font-weight: 600;
+                        margin-bottom: 12px;
+                        @include tablet(){
+                            margin-bottom: 15px;
+                        }
+                    }
+                    article{
+                        text-indent: 32px;
+                        color: $dark-shade;
+                        font-size: rem(16);
+                        margin-bottom: 12px;
+                        @include px(15);
+                        @include tablet(){
+                            @include px(40);
+                            margin-bottom: 40px;
+                        }
+                        border-left: 6px solid $brand;
+                    }
+                }
+                &-contacts{
+                    flex-wrap: wrap;
+                    &-contact{
+                        width: 40%;
+                        margin-bottom: 10px;
+                        @include tablet(){
+                            width: 30%;
+                            margin-bottom: 50px;
+                        }    
+                        @include extra(){
+                            width: 19%;
+                        }             
+
+                        img{
+                            height: 50px;
+                            width: auto;
+                            margin-bottom: 8px;
+                            @include tablet(){
+                                height: 70px;
+                                margin-bottom: 12px;
+                            }
+                        }
+                        b{
+                            margin-bottom: 5px;
+                            color: black;
+                            font-size: rem(16);
+                            text-transform: capitalize;
+                        }
+                        article{
+                            p{
+                                text-align: center;
+                                font-size: rem(16);
+                                margin-bottom: 0;
+                            }
+                        }
+                    }
+                }
+            }
+        }      
+    }
+        .m-board{
+            display: grid;
+            grid-template-columns: 1fr min-content;
+            @include tablet(){
+            height: 100%;
+            }
+        }
+    }
+    .remove-company{
+        margin-bottom: 60px;
+        .del-header{
+            padding: 20px 10px;
+            h3{
+                font-weight: normal;
+                font-size: rem(18);
+                color: $brand;
+                text-transform: uppercase;
+            }
+            img{
+                height: 16px;
+                margin-left: 20px;
+                @include flow(0.15);
+            }
+        }
+        .del-content{
+            overflow: hidden;
+            height: 0;
+            @include flow(0.15);
+            .m-button{
+                position: relative !important;
+                bottom: 0 !important;
+                width: 100% !important;
+                @include tablet(){
+                    width: 180px !important;
+                }
+            }
+        }
+        &.shown{
+            .del-header{
+                img{
+                    transform: rotate(180deg);
+                }
+            }
+            .del-content{
+                height: 100px;
+            }
+        }
+    }
+}

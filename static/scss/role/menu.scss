@@ -1,0 +1,70 @@
+@import '~/static/scss/default.scss';
+.m-header{
+    @include flow(0.15);
+    top: 0;
+    position: fixed;
+    width: 100vw;
+   @include px(50);
+   height: 60px;
+   background-color: $brand;
+   justify-content: space-between;
+   z-index: 1000;
+   b,#whole_menu{
+       display: none;
+   }
+   #chat{
+       display: flex;
+   }
+   .logo{
+    margin-left: 0px;    
+    }
+   #logo{
+    @include py(5);
+    }
+
+   @include tablet(){
+       position: absolute;
+    @include px(130);
+    #chat,.first_menu{
+        display: none;
+    }
+    b,#whole_menu{
+        display: flex;
+    }
+    .logo{
+        margin-left: 14px;    
+    }
+    #logo{
+        @include py(12);
+    }    
+   }
+   @include screen(){
+       justify-content: flex-end;
+       height: 80px;
+       background-color: transparent;
+       #icon,.logo{
+           display: none;
+       }
+       .first_menu{
+           display: block;
+       }
+   }
+   #whole_menu.shrink{
+    background-color: #ffffff7a;
+    box-shadow: 2px 2px 15px rgba(0,0,0,0.1);
+    .menu-link{
+        color: $brand !important;
+        @include flow(0.15);
+        &:hover{
+            border-color: $brand;
+        }
+        &.soon{
+            position: relative;
+            &::after{
+            background-color: $brand;
+            color: $white;
+            }
+        }
+    }
+}
+}

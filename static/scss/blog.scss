@@ -1,0 +1,172 @@
+@import '~/static/scss/role/company.scss';
+@import '~/static/scss/index/layout.scss';
+@import '~/static/scss/index/with-caption.scss';
+.blog{
+    &-item{
+        box-shadow: 2px 2px 10px rgba( #000000, 0.1);
+        margin-top: 15px;
+        @include tablet(){
+            margin-top: 20px;
+        }        
+        .content{
+            @include px(5);
+            padding-bottom: 15px;
+            @include tablet(){
+                @include px(15);
+            }
+            .photo{
+                height: 200px;
+                width: 100%;
+                float: none;
+                background-position: center;
+                background-size: cover;
+                margin-right: 0;
+                margin-bottom: 0;
+                @include tablet(){
+                    margin-right: 15px;
+                    height: 305px;
+                    width: 33%;
+                    float: left;
+                }
+            }
+            .header{
+                margin-top: 20px;
+                margin-bottom: 10px;               
+                flex-direction: column;
+                justify-content: flex-start;
+                @include tablet(){
+                    margin-top: 5px;
+                    margin-bottom: 15px;             
+                    flex-direction: row;
+                    justify-content: space-between;
+                }
+                .h1{
+                    font-weight: bold;
+                    text-transform: uppercase;
+                    font-size: rem(18);
+                    margin: 0 !important;
+                    text-align: left !important;
+                }
+                span{
+                    font-weight: 650;
+                    font-size: rem(16);
+                    color: $brand;
+                }
+            }
+            .text-container{
+                margin-top: 15px;
+                @include tablet(){
+                    margin-top: 20px;
+                }
+                .text{
+                    font-size: rem(16);
+                    @include flow;
+                }
+                .more{
+                    width: max-content;
+                    margin-top: 10px;
+                    text-transform: uppercase;
+                    font-size: rem(14);
+                    font-weight: 600;
+                    color: $brand;
+                    img{
+                        height: 10px;
+                        margin-left: 5px;
+                    }
+                }
+            }
+        }   
+        .border{
+            height: 4px;
+            background-color: $light-shade;
+            margin: 15px 0;
+            @include mx(5);
+            @include tablet(){
+                @include mx(15);
+            }
+        }
+        .icons{
+            @include px(5);
+            margin-bottom: 15px;
+            @include tablet(){
+                @include px(15);
+                margin-bottom: 20px;
+            }
+        }  
+        .comments-container{
+            height: 0;
+            overflow: hidden;
+            @include flow(0.2);
+        }
+        .comments{
+            @include flow;
+            @include px(5);
+            padding-bottom: 15px;
+            @include tablet(){
+                @include px(15);
+            }
+            .create{
+                margin-bottom: 15px;
+                @include tablet(){
+                    margin-bottom: 20px;
+                }
+                textarea{
+                    height: 50px;
+                    @include tablet(){
+                        height: 100px;
+                    }
+                }
+                .m-button{
+                    position: relative !important;
+                    bottom: auto !important;
+                    margin-top: 15px;
+                    width: 100% !important;
+                    @include tablet(){
+                        width: 150px !important;
+                    }
+                }
+            }
+            .capt{
+                margin-top: 10px;
+                font-style: italic;
+                color: $brand;
+            }
+            .written{
+                margin-top: -5px;
+                .comment{
+                    @include px(5);
+                    margin-top: 30px;
+                    @include tablet(){
+                        @include px(15);
+                    }
+                    .head{
+                        margin-bottom: 5px;
+                        .avatar{
+                            height: 30px;
+                            width: 30px;
+                            border-radius: 50%;
+                            background-size: cover;
+                            background-position: center;
+                            background-image: url(/images/void-img.png);
+                            margin-right: 7px;
+                        }
+                        span{
+                            font-weight: 600;
+                            text-transform: uppercase;
+                            color: $brand;
+                            font-size: rem(16);
+                            text-overflow: ellipsis;
+                            overflow-x: hidden;
+                            white-space: nowrap;
+                        }
+                    }
+                    .origin{
+                        padding: 0 30px;
+                        font-size: rem(14);
+                        font-weight: 400;
+                    }
+                }
+            }
+        } 
+    }
+}

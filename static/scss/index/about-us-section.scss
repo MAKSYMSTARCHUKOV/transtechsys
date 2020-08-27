@@ -1,0 +1,106 @@
+.about-us{
+    position: relative;
+    display: grid;
+    grid-template-columns: 1fr;
+    column-gap: 30px;
+    row-gap: 30px;
+    padding-right: 0;
+    @include tablet(){
+        grid-template-columns: 1fr 580px;
+    }
+    @include extra(){
+        @include py(80)
+    }
+    .article{
+        grid-column-end: span 1;
+        grid-row-start: 2;
+        @include tablet(){
+            grid-column-start: 1;
+            grid-row-start: 1;
+        }
+       h1,.h1{
+            font-size: rem(22);
+            margin-bottom: 5px;
+            @include tablet(){
+                font-size: rem(25);
+            }
+            @include screen(){
+                font-size: rem(30);
+            }
+        }
+        .h3{
+            font-size: rem(18);
+            margin-bottom: 20px;
+            color: $brand;
+            @include tablet(){
+                font-size: rem(22);
+            }
+        }
+        .m-buttons{
+            display: flex;
+            flex-direction: column;
+            margin-top: 30px;
+            @include tablet(){
+                flex-direction: row;
+                justify-content: flex-start;
+            }
+            .m-button{
+                position: relative;
+                bottom: 0;
+                @include tablet(){
+                    width: 200px;
+                }
+                &:nth-of-type(1){
+                    margin-bottom: 15px;
+                    @include tablet(){
+                        margin-bottom: 0;
+                        margin-right: 30px;
+                    }
+                }
+
+            }
+        }
+    }
+    .video{
+        position: relative;
+        height: 400px;
+        z-index: 1;
+        display: flex;
+        align-items: center;
+        justify-content: flex-end;
+        @include tablet(){
+            height: 320px;
+        }
+        &.vid{
+            height: 200px;
+            @include tablet(){
+                height: 100%;
+            }
+        }
+        #tablet{            
+            margin-right: -50px;
+            @include tablet(){
+                margin-right: 0;
+            }
+        }
+        .screen{
+            background-color: darken($brand, 30%);
+            height: 100%;
+            position: relative;
+            @include tablet(){
+                height: calc(100% + 60px);
+                top: -30px;                
+            }
+            &:before{
+                z-index: -1;
+                content: '';
+                position: absolute;
+                top:-10%;
+                left: 50%;
+                width: 60%;
+                height: 50%;
+                background-color: $brand;
+            }
+        }
+    }
+}

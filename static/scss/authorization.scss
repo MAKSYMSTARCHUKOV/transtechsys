@@ -1,0 +1,209 @@
+@import '~/static/scss/default.scss';
+@import '~/static/scss/flags32-both.scss';
+
+.v-auth{
+    width: max-content;
+    height: max-content;
+    background-color: white;
+    z-index: 1;
+    padding: 0 15px 0;
+    max-width: 100vw;
+    // max-height: 100vh;
+    @include tablet(){
+        padding: 0 50px 0;
+    }
+    form{
+        position: relative;
+        display: grid;
+        grid-template-columns: 1fr;     
+        @include my(20);   
+        @include tablet(){
+            @include my(40);
+            grid-template-columns: 1fr 1fr;
+            column-gap: 10px;
+        }
+        .p-container{
+            grid-column: 1 / -1;
+            position: relative;
+            .choose{
+                position: absolute;
+                z-index: 12;
+            }
+        }
+        #close,#back{
+            position: absolute;
+            top: rem(9);
+            transform: translateY(-25%);
+            right: 0px;
+            width: 24px;
+            @include tablet(){
+                top: rem(12.5);
+                right: -33px;
+            }
+        }
+        #back{
+            left: 0;
+            @include tablet(){
+                left: -24px;
+            }
+        }
+        h1{
+            grid-column: 1 / -1;
+            text-align: center;
+            font-size: rem(18);
+            margin-bottom: 15px;
+            color: black;
+            @include tablet(){
+                font-size: rem(25);
+            }
+            @include screen(){
+                margin-bottom: 20px;
+                font-size: rem(30);
+            }
+        }
+        .error-message{
+            color: $error;
+            display: none;
+            grid-column: 1 / -1;
+            text-align: center;
+        }
+        .overview{
+            grid-column: 1 / -1;
+            margin-bottom: 10px;
+            font-size: rem(14);
+            color: transparentize($black, 0.5);
+            text-align: center;
+            &.h{
+                margin-top: 20px;
+                font-size: rem(18);
+            }
+        }
+        .databot{
+            grid-column: 1 / -1;
+            background-color: $light-shade;
+            height: 0;
+            display: none;
+            overflow: hidden;
+            @include flow(0.15);
+            margin-bottom: 10px;
+            &-info{
+                width: 100%;                
+                padding: 20px 10px;
+                @include tablet(){
+                    padding: 20px;
+                }
+                &-header{                    
+                    color: $green;
+                    font-weight: bold;
+                    #success{
+                        height: 15px;
+                        margin-right: 6px;
+                    }
+                    &-message{
+                        color: $dark-shade;
+                        font-weight: 500;
+                        font-size: rem(12);
+                        margin-left: 10px;
+                    }
+                }
+                &-content{
+                    margin-top: 15px;
+                    .com{
+                        &-title{
+                            color: $brand;
+                            font-size: rem(16);
+                            font-weight: bold;
+                            text-align: left;
+                        }
+                        &-field{
+                            color:$dark-shade;
+                            &-title{
+                                font-weight: bold;
+                                display: contents;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        .m-input,.m-select{
+            grid-column: 1 / -1;
+            margin-bottom: 10px;            
+        }
+        .m-checkbox{
+            grid-column: 1 / -1;
+            margin-bottom: 10px;
+            margin-top: 5px;
+            .square{
+                width: 10px;
+                height: 10px;
+                border: 2px solid $brand;
+            }
+            [type="checkbox"]~.square{
+                @include flow(0.15);
+                background-color: white;
+            }
+            [type="checkbox"]:checked~.square{
+                @include flow(0.15);
+                background-color: $brand;
+            }
+            &-content{
+                margin-left: 10px;
+                color: black;
+            }
+        }   
+        .m-button{
+            grid-column: 1 / -1;
+        }   
+        label{
+            .terms{
+                color: $brand;
+            }
+        }
+        #password,#confirmPassword{
+            grid-column-end: -1;
+            @include tablet(){
+                grid-column-end: span 1;
+            }
+        }
+        #confirmPassword{
+            @include tablet(){
+                grid-column-start: 2;
+            }
+        }
+
+
+        .variants{
+            grid-column: 1 / -1;
+            margin-top: 20px;
+            margin-bottom: 20px;
+            @include tablet(){
+                // margin-bottom: 50px;
+            }
+            div.pointer{
+                font-size: rem(14);
+                font-weight: 600;
+                text-transform: uppercase;
+                color: $brand;
+                @include flow(0.15);
+                &:hover{
+                    color: $black;
+                   @include flow(0.15);
+                }
+            }
+            .vertical{
+                height: 100%;
+                width: 3px;
+                background-color: $brand;
+                @include mx(30)
+            }
+        }
+    }    
+}
+#v-auth-canvas{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+}

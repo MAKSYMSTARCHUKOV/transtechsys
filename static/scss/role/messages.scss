@@ -1,0 +1,382 @@
+@import '~/static/scss/role/company.scss';
+
+.messages{
+    height: 100%;
+    max-height: 100vh;
+    @include tablet(){
+        height: auto;
+        min-height: 400px;
+        max-height: 970px;
+    }
+    .contacts{
+        overflow: hidden;
+        padding-top: 60px;
+        height: 100%;     
+        width: 100%;
+        background-color: $shade;
+        flex-shrink: 0;
+        box-shadow: 2px 2px 15px rgba(#000000,.1);
+        @include flow;        
+        @include tablet(){
+            padding-top: 20px;
+        }
+        &.activated{
+            @include flow;
+            width: 500px;
+            @include extra(){
+                width: 700px;
+            }
+        }
+        h1{
+            text-align: center;
+            font-size: rem(18);
+            margin-bottom: 14px;
+            @include px(50);
+            @include tablet(){
+                @include px(30);
+                margin-bottom: 14px;
+                text-align: left;
+            }
+        }
+        .m-input{
+            @include mx(50);
+            @include tablet(){
+                @include mx(30);
+            }
+        }
+        .faces{  
+            height: 100%;            
+            .single{
+                height: 100%;
+                margin-top: 27px;
+                overflow-y: auto;
+                @include px(50);
+                @include tablet(){
+                    @include px(30);
+                }    
+                .contact{
+                    padding: 3px;
+                    position: relative;
+                    @include flow(0.15);
+                    &:not(:first-child){
+                        margin-top: 27px;
+                    }
+                    &-container{
+                        margin-bottom: 20px;
+                    }
+                    &.shown{
+                        @include flow(0.15);
+                        background-color: #88898a;
+                        .bio{
+                            #name,.chunck,.date{
+                                @include flow(0.15);
+                                color: white;
+                            }
+                        }
+
+                    }
+                    .avatar{
+                        position: relative;
+                        margin-right: 17px;
+                        .bubble{
+                            position: absolute;
+                            top: 0;
+                            right: 0;
+                            width: 20px;
+                            height: 20px;
+                            background-color: $brand;
+                            border-radius: 50%;
+                            span{
+                                font-size: rem(14);
+                                color: white;
+                                font-weight: 600;
+                            }
+                            @include extra(){
+                            width: 30px;
+                            height: 30px;
+                            right: -5px;
+                            }
+                        }
+                        .online{
+                            position: absolute;
+                            top: 58px;
+                            right: 3px;
+                            width: 12px;
+                            height: 12px;
+                            background-color: $green;
+                            border-radius: 50%;
+                            border: 2px solid white;
+                        }
+                        .img-holder{
+                            width: 75px;
+                            height: 75px;
+                            border-radius: 50%;
+                        }
+                    }
+                    .bio{
+                        #name{
+                            @include flow(0.15);
+                            margin-bottom: 10px;
+                            font-size: rem(16);
+                            @include tablet(){
+                                margin-bottom: 10px;
+                            }
+                            @include extra(){
+                                font-size: rem(20);
+                                margin-bottom: 0;
+                            }
+                        }
+                        .chunck{
+                            @include flow(0.15);
+                            color: $dark-shade;
+                            font-size: rem(14);
+                            @include extra(){
+                                font-size: rem(18);
+                            }
+                        }
+                        .date{
+                            @include flow(0.15);
+                            color: $dark-shade;
+                            margin-top: auto;
+                            font-size: rem(12);
+                            @include extra(){
+                                font-size: rem(16);
+                            }
+                        }
+                    }
+                }
+            }
+            .group{
+                flex-shrink: 0;
+                box-shadow: 2px 2px 15px rgba(#000000,.1);
+                background-color: white;
+                @include py(20);
+                @include px(50);
+                @include tablet(){
+                    @include py(10);
+                    @include px(30);
+                }    
+                .choser{
+                    img{
+                        height: 18px;
+                        margin-right: 10px;
+                    }
+                    span{
+                        font-weight: 600;
+                        font-size: rem(18);
+                        text-transform: uppercase;
+                        color: $brand;
+                    }
+                }
+            }
+        }
+        
+    }
+    .dialogues{
+        width: 100%;
+        position: relative;
+        height: 100vh;
+        @include flow(0.1);
+        @include tablet(){
+            // height: 100%;
+            min-height: 400px;
+            max-height: 970px;
+        }
+        .ref{
+            margin: 60px 0 20px ;
+            position: relative;
+            img{
+                height: 18px;
+                position: absolute;
+                left: 50px;
+                top: 50%;
+                transform: translateY(-50%);
+            }
+            h1{
+                text-align: center;
+                font-size: rem(18);
+                @include px(50);
+                @include tablet(){
+                    @include px(30);
+                    text-align: left;
+                }
+            }
+        }
+        .head{
+            padding: 13px 30px;
+            box-shadow: 2px 2px 15px rgba(#000000,.1);
+            flex-shrink: 0;
+            z-index: 1;
+            @include tablet(){
+                @include px(50)
+            }
+            .avatar{
+                margin-right: 17px;
+                .img-holder{
+                    width: 75px;
+                    height: 75px;
+                    border-radius: 50%;
+                    background-image: url(/images/void-img.png);
+                    background-size: cover;
+                    background-position: center;
+                }
+            }
+            .bio{
+                .name{
+                    margin-bottom: 10px;
+                    position: relative;
+                    #name{
+                        font-size: rem(16);
+                        @include tablet(){
+                            font-size: rem(18);
+                        }
+                    }
+                    .manipulate{
+                        height: 18px;
+                        margin-left: 5px;
+                    }
+                    .change-name{
+                        position: absolute;
+                        .m-input{
+                        }
+                    }
+                }
+                .chunck{
+                    color: $brand;
+                    font-size: rem(14);
+                }
+                .group-chat{
+                    position: relative;
+                    .m-container{
+                        position: absolute;
+                        bottom: 5px;
+                    }
+                    .participants{
+                        margin-top: -3px;
+                        flex-wrap: wrap;
+                        &-chip{
+                            border-radius: 20px;
+                            background-color: rgba($brand,.3);
+                            padding: 3px 7px;
+                            margin: 3px 7px 0 0;
+                            font-size: rem(12);
+                            position: relative;
+                            @include tablet(){
+                                font-size: rem(14);    
+                            }
+                            .online{
+                                left: -4px;
+                                width: 8px;
+                                height: 8px;
+                                background-color: $green;
+                                border: 1px solid white;
+                                border-radius: 50%;
+                                position: absolute;
+                                top: 50%;
+                                transform: translateY(-50%);
+                            }
+                            img{
+                                height: 12px;
+                                margin-left: 5px;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        .chat-container{
+            overflow-y: auto;
+            height: 100%;
+            @include px(0);
+            margin-bottom: 15px;
+               @include tablet(){
+                   @include px(30)
+               }
+            .chat{
+                margin-top: auto;
+                width: 100vw;
+                padding-top: 20px;
+                .uploading{
+                    display: flex;
+                    justify-content: center;
+                    width: 100%;
+                    padding: 0 0 10px;
+                    margin: 0;
+                    background-color: transparent;
+                    max-width: 100%;
+                    img{
+                        flex-shrink: 0;
+                        height: 25px;
+                    }
+                }
+                div{
+                    display: flex;
+                    flex-direction: column;
+                    flex-shrink: 0;
+                    align-items: center;
+                    font-size: rem(15);
+                    padding: 9px 10px;
+                    margin-bottom: 20px;
+                    width: max-content;
+                    max-width: 85%;
+                    background-color: #d3d7e1;
+                    @include tablet(){
+                        padding: 7px 10px; 
+                        @include px(17);             
+                    } 
+                    @include extra(){
+                        font-size: rem(17);
+                    }
+                    img{
+                        height: 60px;
+                    }  
+                    &.typing{
+                        width: max-content;
+                        @include py(0);
+                    }                                   
+                }
+                .from{
+                    padding-left: 50px;
+                    padding-right: 10px;
+                    margin-left: 0;
+                    background-color: #eef0f5;
+                }
+                .to{
+                    padding-right: 50px;
+                    padding-left: 10px;
+                    margin-left: auto;
+                    background-color: #eef0f5;
+                }
+            }
+        }
+        .type-area{
+            flex-shrink: 0;
+            border: 1px solid $input;
+            margin: 5px 50px 45px;
+            @include tablet(){
+                margin: 15px 30px 25px;
+            }
+            textarea{
+                border: none;
+                width: 100%;
+                height: 50px;
+                resize: none;
+                @include tablet(){
+                    height: 85px;
+                }
+            }
+            .action-area{
+                flex-shrink: 0;
+                padding: 15px;
+                align-items: center;
+                @include tablet(){
+                    align-items: flex-start;
+                    padding: 9px 18px;
+                }
+                img{
+                    width: 22px;
+                }
+            }
+        }
+    }
+}

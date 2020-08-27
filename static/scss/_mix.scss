@@ -1,0 +1,59 @@
+@mixin tablet(){
+    @media screen and (min-width: 961px){
+        @content;
+    }
+}
+
+@mixin screen(){
+    @media screen and (min-width: 1265px){
+        @content;
+    }
+}
+
+@mixin extra(){
+    @media screen and (min-width: 1905px){
+        @content;
+    }
+}
+
+@function rem($px){
+    @return ($px / 16) * 1rem;
+}
+
+@mixin flow($dur:0.2){
+    transition: all #{$dur}s linear
+}
+
+@mixin width(){
+    .w-50{
+            width: 50% !important;
+        }
+    .w-100{
+        width: 100% !important;
+    }    
+}
+
+@mixin py($px) {
+    padding-top: $px * 1px;
+    padding-bottom: $px * 1px;    
+}
+
+@mixin px($px) {
+    padding-left: $px * 1px;
+    padding-right: $px * 1px;    
+}
+
+@mixin my($px) {
+    margin-top: $px * 1px;
+    margin-bottom: $px * 1px;    
+}
+
+@mixin mx($px) {
+    margin-left: $px * 1px;
+    margin-right: $px * 1px;    
+}
+
+@mixin button() {
+    font-size: rem(14);
+    font-weight: 600;
+}

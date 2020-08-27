@@ -1,0 +1,91 @@
+html{
+    overflow-x: hidden !important;
+}
+body{
+    overflow-x: hidden !important;
+}
+
+.menu-enter{
+    opacity: 0;
+    transform: translateX(-10px);
+}
+
+.menu-enter-active,.menu-leave-active{
+    transition: all 0.15s;
+}
+
+.menu-leave-to{
+    opacity: 0;
+    transform: translateX(10px);
+}
+
+
+.right-enter,.left-leave-to,.page-leave-to,.right-tab-enter,.left-tab-leave-to{
+    opacity: 0;
+    transform: translateX(-50px);
+}
+
+.right-enter-active,.right-leave-active,.left-enter-active,.left-leave-active,.page-enter-active,.page-leave-active,.right-tab-enter-active,.right-tab-leave-active,.left-tab-enter-active,.left-tab-leave-active,.down-enter-active,.down-leave-active{
+    transition: all 0.25s ease-out;
+}
+
+.right-leave-to,.left-enter,.page-enter,.left-tab-enter,.right-tab-leave-to, .chips-enter{
+    opacity: 0;
+    transform: translateX(50px);
+}
+.chips-leave-to{
+    opacity: 0;
+    transform: translateY(-10px);
+}
+
+.down-enter{
+    opacity: 0;
+    transform: translateY(-50px);
+}
+
+.down-leave-to{
+    opacity: 0;
+    transform: translateY(50px);
+}
+
+.flip-move{
+    transition: transform 0.5s;
+}
+
+.numbers-enter{
+    opacity: 0;
+    transform: translateY(10px);
+}
+
+.numbers-enter-active,.numbers-leave-active{
+    transition: all 0.15s;
+}
+
+.numbers-leave-to{
+    opacity: 0;
+    transform: translateX(-10px);
+}
+
+.default-enter,.default-leave-to{
+    opacity: 0;
+}
+
+.default-enter-active,.default-leave-active,.chips-enter-active, .chips-leave-active, .from-right-active, .from-left-active, .from-up-active{
+    transition: all 0.15s;
+}
+
+.from-right-enter, .from-right-leave-to{
+    opacity: 0;
+    transform: translateX(10px);
+}
+
+.from-left-enter, .from-left-leave-to{
+    opacity: 0;
+    transform: translateX(10px);
+}
+
+.from-up-enter{
+    opacity: 0;
+    transform: translateY(-10px);
+}
+

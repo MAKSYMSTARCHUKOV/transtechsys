@@ -1,0 +1,106 @@
+.company-catalog{
+    h1{
+        text-align: center;
+        @include tablet(){
+            text-align: left;
+        }
+    }
+    .catalog{
+        &-header{
+            flex-direction: column;
+            align-items: center;
+            margin-bottom: 20px;
+            @include tablet(){
+                flex-direction: row;
+                justify-content: space-between;
+            }
+            .search{
+                width: 100%;
+                margin-bottom: 10px;
+                @include tablet(){
+                    margin-bottom: 0;
+                    width: 300px;
+                }
+            }
+        }
+        &-content{
+            position: relative;
+            min-height: 200px;
+            .content-item{
+                flex-direction: column;
+                box-shadow: 2px 2px 15px rgba(0, 0, 0, 0.1);
+                margin-bottom: 20px;
+                @include tablet(){
+                    flex-direction: row;
+                }
+                ._avatar{
+                    height: 113px;
+                    background-position: center;
+                    background-size: cover;
+                    flex-shrink: 0;
+                    @include tablet(){
+                        height: auto;
+                        min-height: 183px;
+                        width: 270px;
+                    }
+                }
+                ._info{
+                    padding: 20px 18px 25px;
+                    @include tablet(){
+                        padding: 30px 30px 30px 20px;
+                    }
+                    &-header{
+                        margin-bottom: 10px;
+                        flex-direction: column;
+                        justify-content: flex-start;
+                        @include tablet(){
+                            flex-direction: row;
+                            justify-content: space-between;
+                            margin-bottom: 12px;
+                        }
+                        &-title{
+                            font-weight: 800;
+                            color: black;
+                            font-size: rem(20);
+                            text-align: center;
+                            margin-bottom: 8px;
+                            @include tablet(){
+                                text-align: left;
+                                font-size: rem(22);
+                            }
+                        }
+                        &-country{
+                            font-weight: 500;
+                            color: $brand;
+                            font-size: rem(20);
+                            margin-bottom: 8px;
+                            @include tablet(){
+                                margin-bottom: 0;
+                                font-size: rem(16);
+                            }
+                        }
+                        &-rate{
+                            margin-bottom: 8px;
+                            justify-content: center;
+                            @include tablet(){
+                                justify-content: flex-start;
+                            }
+                            .star{
+                                background-image: url(/images/icons/rate-grey.svg);
+                                background-size: cover;
+                                background-repeat: no-repeat;
+                                background-position: center;
+                                width: 20px;
+                                height: 20px;
+                                &.active {
+                                    background-image: url(/images/icons/rate-active.svg);
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+

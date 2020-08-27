@@ -1,0 +1,53 @@
+.count{
+    display: grid;
+    grid-template-columns: repeat(2, 50%);
+    row-gap: 15px;
+    column-gap: 20px;
+    @include tablet(){
+        grid-template-columns: repeat(4,1fr);
+        column-gap: 16px;
+    }
+    @include screen(){
+        column-gap: 34px;
+    }
+   h1,.h1{
+        font-size: rem(22);
+        grid-column: 1 / -1;
+        text-align: center;
+        color: $black;
+        @include tablet(){
+            font-size: rem(25);
+        }
+        @include screen(){
+            font-size: rem(30);
+        }
+    }
+    .square{
+        grid-column-end: span 1;
+        box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.1);
+        border-bottom: 7px solid $brand;
+        @include py(24);
+        @include px(10);
+        @include tablet(){
+            @include py(24);
+        }
+        @include screen(){
+            @include py(40);
+        }
+       .h3{
+            text-align: center;
+            font-size: rem(22);
+            color: $brand;
+            @include tablet(){
+                font-size: rem(30);
+            }
+        }
+        .overview{
+            font-size: rem(16);
+            text-align: center;
+            @include tablet(){
+                font-size: rem(18);
+            }
+        }
+    }
+}

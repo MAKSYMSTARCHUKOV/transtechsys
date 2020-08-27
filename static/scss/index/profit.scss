@@ -1,0 +1,135 @@
+.profit{
+    position: relative;
+    z-index: 1;
+    background-image: url(/images/blue-back-mob.png);
+    background-size: cover;
+    background-position: center;
+    padding-bottom: 55px;
+    @include tablet(){
+        background-image: url(/images/blue-back.png);
+        padding-bottom: 30px;
+    }
+  h1,.h1{
+        font-size: rem(22);
+        text-align: center;
+        margin-bottom: 25px;
+        color: $white;
+        @include tablet(){
+            font-size: rem(25);
+        }
+        @include screen(){
+            font-size: rem(30);
+        }
+    }    
+    .swiper-container{
+        background-color: white;
+        @include tablet(){
+            background-color: transparent;
+        }
+    }
+    .profit-item{
+        padding: 24px;
+        background-color: $white;
+        height: auto;
+        @include tablet(){
+            padding: 35px 10px;
+            height: 350px;
+        }
+        @include screen(){
+            padding: 42px 10px;
+        }
+        img{
+            flex-shrink: 0;
+            height: 46px;
+            margin-bottom: 15px;
+        }
+      h1,.h1{
+            font-size: rem(60);
+            font-weight: 900;
+            color: $brand;
+            margin-bottom: 0;
+            margin-top: 25px;
+        }
+       .h3{
+            font-size: rem(18);
+            text-align: center;
+            color: $black;
+            margin-bottom: 10px;
+            @include tablet(){
+                font-size: rem(22);
+            }
+        }
+        .overview{
+            text-align: center;
+        }
+        .m-button{
+            width: 250px;
+            margin-top: 25px;
+        }
+    }
+    &.simple{
+        background-image: none;
+        background-color: white;
+        @include px(0);
+      h1,.h1{
+            color: black;
+        }
+        .items{
+            @include px(30);
+            display: grid;
+            grid-template-columns: 1fr;
+            column-gap: 30px;
+            row-gap: 25px;
+            @include tablet(){
+                @include px(130);
+                grid-template-columns: repeat(2, 1fr);
+            }
+            @include extra(){
+                @include px(200);
+                grid-template-columns: repeat(3, 1fr);
+            }
+            .a-item{
+                display: flex;
+                flex-direction: column;
+                align-items: center;  
+                padding: 20px 15px;  
+                box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.1);
+                @include tablet(){
+                    padding: 33px 27px;
+                }            
+                .img{
+                    height: 50px;
+                    margin-bottom: 8px;
+                    @include tablet(){
+                        height: 72px;
+                    }
+                }
+               .h3{
+                    font-weight: 800;
+                    color: black;
+                    text-align: center;
+                    font-size: rem(18);
+                    margin-bottom: 8px;
+                    @include tablet(){
+                        font-size: rem(22);
+                    }
+                }
+                p{
+                    text-align: center;
+                    font-size: rem(16);
+                }
+                &:last-child{
+                    justify-self: center;
+                    @include tablet(){
+                        grid-column-end: span 2;
+                        max-width: 500px;
+                    }
+                    @include extra(){
+                        grid-column-end: span 1;
+                        max-width: unset;
+                    }
+                }
+            }
+        }
+    }
+}

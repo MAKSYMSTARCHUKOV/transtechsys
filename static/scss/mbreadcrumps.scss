@@ -1,0 +1,55 @@
+.m-breadcrumps{
+    background-color: transparent !important;
+    border-color: transparent !important;
+    position: absolute;
+    top: 60px;
+    height: 35px;
+    width: 100%;
+    @include px(50);
+    z-index: 5;
+    @include tablet(){
+        top: 80px;
+        @include px(130);
+    }
+    @include extra(){
+        @include px(200);
+    }
+    &.up{
+        top: 0px;
+        @include px(0);
+    }
+    img{
+        height: 13px;
+        margin-right: 7px;
+    }
+    &.white{            
+        .crump{
+            a,span{
+                color: white;
+            }
+            a:hover{
+                @include flow(0.1);
+                color: black;        
+            } 
+        }   
+    }
+    .crump{
+        margin-right: 7px;
+        display: flex;
+        align-items: center;
+        a,span{
+            font-weight: 700;
+            font-size: rem(12);
+            color: $brand;
+            @include flow(0.1);            
+        }
+        a:hover{
+            @include flow(0.1);
+            color: $dark-shade;        
+        }
+        img{
+            height: 10px;
+            margin-right: 7px;
+        }        
+    }
+}

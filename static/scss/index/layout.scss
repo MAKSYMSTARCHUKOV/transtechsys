@@ -1,0 +1,232 @@
+@import '~/static/scss/default.scss';
+
+.head{
+    position: relative;
+    height: 426px;
+    padding: 56px 50px 0;
+    z-index: 3;
+        @include tablet(){
+            height: 443px;
+            padding: 80px 130px 0;
+            display: flex;
+            align-items: center;
+        }
+        @include screen(){
+            height: 609px;
+        }
+    &.tiny{
+        overflow: hidden;
+        height: 60px;
+        @include tablet(){
+            height: 80px;
+        }
+        #left{
+            height: 60px;
+            width: 100%;
+            transform: skewX(0deg);
+            top: 0;
+            left: 0;
+            @include tablet(){
+                transform: skewX(-40deg);
+                height: 80px;
+                right: 350px;
+                left: auto;
+            }
+        }
+        #back{
+            height: auto;
+        }
+    }
+    &.catalog-id{
+        background-color: rgba(0, 0, 0, 0.3);
+    }
+    #left{
+        position: absolute;
+        left: -190px;
+        height: 426px;
+        top: 0;
+        background-color: $brand;
+        transform: skewX(-40deg);
+        width: calc(100% + 320px);
+        @include tablet(){
+            transform: skewX(-25deg);
+            left: -170px;
+            height: 443px;
+            width: 80%;
+        }
+        @include screen(){
+            height: 609px;
+        }
+    }
+    #back-div{
+        position: absolute;
+        height: 407px;
+        right: 0;
+        top: 0;
+        width: 100px;
+        background-color: $dark-shade;
+        @include screen(){
+            height: 588px;
+        }
+    }
+    img{
+        position: absolute;
+        &#back{
+            height: 407px;
+            right: 0;
+            top: 0;
+            display: none;
+            @include screen(){
+                display: inherit;
+                height: 588px;
+            }
+
+        }
+        &#truck{
+            display: none;
+            @include tablet(){
+                display: inherit;
+                height: 550px;
+                top: 0px;
+                left: 55%;              
+            }
+            @include screen(){
+                height: 838px;
+                top: -60px;
+                left: auto;
+                right: -120px;
+            };
+            @include extra(){
+                right: -60px;
+            }
+        }
+    }
+    .banner{    
+        align-items: flex-start;
+        justify-content: center;
+        align-items: center;
+        margin-top: 20px;
+        @include tablet(){
+            align-items: flex-start;
+        }
+        *{
+            text-align: center;
+            text-transform: uppercase;
+            z-index: 10;
+            color: $white;
+            @include tablet(){
+                text-align: left;
+            }
+        }
+        #top{
+            font-size: rem(18);
+            font-weight: 500;
+            margin-bottom: 5px;
+            @include tablet(){
+                font-size: rem(20);
+            }
+            @include screen(){
+                font-size: rem(22);
+            }
+            
+        }
+       h1,.h1{
+            font-size: rem(28);
+            font-weight: 900;
+            margin-bottom: 10px;
+            @include tablet(){
+                margin-bottom: 15px;
+                font-size: rem(32);
+            }
+            @include screen(){
+                font-size: rem(38);
+            }
+        }
+        #bottom{
+            text-transform: unset;
+            font-size: rem(16);
+            margin-bottom: 20px;
+            font-weight: normal;
+            @include tablet(){
+                margin-bottom: 30px;
+            }
+        }
+        .buttons{
+            flex-direction: column;
+            @include tablet(){
+                flex-direction: row;
+                align-items: center;
+                justify-content: space-between;
+            }
+
+            .m-button:first-child{
+                margin-bottom: 20px;
+                @include tablet(){
+                    margin-bottom: 0;
+                    margin-right: 20px;
+                }
+            }
+        }
+    }
+    &.one-button{
+        #left{
+            z-index: 2;
+            @include tablet(){
+                width: 80%;
+                left: -260px;
+            }
+        }
+        #truck{
+            z-index: 1;
+            @include tablet(){                
+            }
+            @include screen(){
+                height: 765px;
+                top: -14px;
+                right: 2%;
+            }
+            &.-sender{
+                top: -30px;
+                @include screen(){
+                    height: 665px !important;
+                }
+                @include extra(){
+                    top: -15px
+                }
+            }
+            &.-carrier{
+                @include screen(){
+                    height: 560px !important;
+                }
+            }
+        }
+        .banner{
+            height: 100%;
+            margin-top: 0;
+        }
+        .buttons{
+            .m-button{
+                margin-right: 0;
+                width: 100%;
+                @include tablet(){
+                    width: 50%
+                }
+            }
+        }
+        &.carrier{
+            #truck{
+                @include tablet(){
+                    height: 400px;
+                    top: 80px;
+                    left: auto;
+                    right: 0;
+                }
+                @include screen(){
+                    height: 584px;
+                    top: 81px;
+                    right: 0;
+                }       
+            }
+        }
+    }
+}

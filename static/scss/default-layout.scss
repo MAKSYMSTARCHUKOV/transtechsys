@@ -1,0 +1,183 @@
+@import '~/static/scss/default.scss';
+
+.top-menu {
+  @include button;
+  color: white !important;
+  text-transform: uppercase;
+  padding: 10px;
+  border: 2px solid transparent;
+  line-height: 100%;
+  @include flow(0.15);
+  @include tablet(){
+    @include px(5);    
+  }
+  @include screen(){
+    @include px(10);
+  }
+    &:hover{
+        border-color: white;
+        @include flow(0.15);
+    }
+    &.mobile{
+        font-size: rem(18);
+        font-weight: 500;
+    }
+}
+.right-section{    
+  #login{
+      font-weight: 800;
+  }
+  #pipe{
+      color: $brand;
+  }
+  .cabinet{
+      position: relative;
+      padding-bottom: 10px;
+      margin-top: 10px;
+      #avatar{
+          height: 30px;
+          width: 30px;
+          border-radius: 50%;
+          border: 2px solid white;
+          margin-right: 10px;
+      }
+      #name{
+          font-weight: 600;
+          text-transform: uppercase;
+          color: white;
+          font-size: rem(16);
+          text-overflow: ellipsis;
+          overflow-x: hidden;
+          white-space: nowrap;
+      }
+      .panel{
+        background-color: white;
+          overflow: hidden;
+          position: absolute;
+          height: 0;
+          width: 200px;
+          border-radius: 6px;
+          left: 0;
+          top: 35px;
+          box-shadow:  2px 2px 3px rgba(0, 0, 0, 0.1);
+          @include px(4);
+          @include flow(0.15);
+          &-menu{
+              width: 100%;
+              display: flex;
+              align-items: center;
+              padding: 7px 12px;
+              @include flow(0.15);
+              border-radius: 6px;
+              img{
+                height: 16px;
+                width: auto;
+                margin-right: 10px;
+              }
+              span{
+                @include flow(0.15);
+                color: $dark-shade;
+                font-weight: 600;
+                font-size: rem(14);
+              }
+              &:hover{
+                span{
+                    color: $brand;
+                    @include flow(0.15);
+                }
+              }
+          }         
+      }
+      &:hover{
+        .panel{
+            height: 80px;
+            @include flow(0.15);
+        }    
+      }
+  }
+}
+.mobile__nav{    
+    background-image: url('/images/back-mob.png');
+    background-size: cover;
+    background-position: right top;
+    height: 100% !important;
+    .cabinet{
+      position: relative;
+      padding-bottom: 10px;
+      margin-top: 10px;
+      #avatar{
+          height: 30px;
+          width: 30px;
+          border-radius: 50%;
+          border: 2px solid white;
+          margin-right: 10px;
+      }
+      #name{
+          font-weight: 600;
+          text-transform: uppercase;
+          color: white;
+          font-size: rem(16);
+          text-overflow: ellipsis;
+          overflow-x: hidden;
+          white-space: nowrap;
+      }
+      .panel{
+        background-color: white;
+          overflow: hidden;
+          height: 0;
+          width: 100%;
+          left: 0;
+          top: 35px;
+          @include px(4);
+          @include flow(0.15);
+          margin-top:10px;
+          &-menu{
+              width: 100%;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              padding: 15px 10px;
+              @include flow(0.15);
+              border-radius: 6px;
+              img{
+                height: 17px;
+                width: auto;
+                margin-right: 10px;
+              }
+              span{
+                @include flow(0.15);
+                color: $dark-shade;
+                font-weight: 600;
+                font-size: rem(17);
+              }
+              &:hover{
+                span{
+                    color: $brand;
+                    @include flow(0.15);
+                }
+              }
+          }  
+          &.act{
+            height: 110px;
+            @include flow(0.15);
+          }       
+      }    
+  }
+    .buttons{
+        margin-top: auto;
+        padding: 0 50px 50px;
+    }
+}
+.menu-enter{
+    opacity: 0;
+    transform: translateX(-10px);
+}
+
+.menu-enter-active,.menu-leave-active{
+    transition: all 0.15s;
+}
+
+.menu-leave-to{
+    opacity: 0;
+    transform: translateX(10px);
+}

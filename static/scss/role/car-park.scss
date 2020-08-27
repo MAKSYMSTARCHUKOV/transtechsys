@@ -1,0 +1,346 @@
+@import '~/static/scss/role/company.scss';
+.car-park,.add-driver{
+    h3{
+        margin-bottom: 4px;
+        font-weight: 500;
+        font-size: rem(16);
+        text-transform: uppercase;
+        color: $brand;
+    }
+    .edit-tabs{
+        grid-column: 1 / -1;
+        &-forms{
+            &-form{
+            @include py(10);
+                &-inputs{
+                    display: grid;
+                    grid-template-columns: 1fr;
+                    row-gap: 10px;
+                    column-gap: 20px;
+                    h3{
+                        margin-top: 30px;
+                        margin-bottom: 15px;
+                    }
+                    &.first-vehicle{
+                        @include tablet(){
+                            grid-template-columns: repeat(2, 1fr);
+                        }
+                        @include screen(){
+                            grid-template-columns: repeat(3, 1fr);
+                        }
+                    }
+                    &.driver-license{
+                        @include tablet(){
+                            grid-template-columns: repeat(2,1fr);
+                        }
+                        .role-input{
+                            grid-column-end: span 1;
+                        }
+                    }
+                    &.second-vehicle,&.driver-forms{
+                        @include tablet(){
+                            grid-template-columns: repeat(6, 1fr);
+                            .role-input{
+                                &:nth-of-type(1){
+                                    grid-column-end: span 2;
+                                }
+                                &:nth-of-type(2){
+                                    grid-column-end: span 2;
+                                }
+                                &:nth-of-type(3){
+                                    grid-column-end: span 2;
+                                }
+                                &:nth-of-type(4){
+                                    grid-column-end: span 3;
+                                }
+                                &:nth-of-type(5){
+                                    grid-column-end: span 3;
+                                }
+                            }
+                        }
+                    }
+                }
+                &-checks{
+                    .m-checkbox-content{
+                        font-size: rem(16);
+                        color: $dark-shade;
+                    }
+                }
+                &-media{
+                    // display: grid;
+                    // grid-template-columns: 1fr;
+                    // row-gap: 20px;
+                    // column-gap: 20px;
+                    // @include tablet(){
+                    //     grid-template-columns: repeat(2, 1fr);
+                    // }
+                    display: flex;
+                    flex-direction: column;
+                    @include tablet(){
+                        flex-direction: row;
+                        flex-wrap: wrap;
+                    }
+                    &-item{
+                        width: 100%;
+                        margin-bottom: 20px;
+                        position: relative;
+                        @include tablet(){
+                            width: 49%;
+                            &:nth-of-type(2n+1){
+                                margin-right: 1%;
+                            }
+                            &:nth-of-type(2n){
+                                margin-left: 1%;
+                            }
+                        }
+                        .choose{
+                            position: absolute;
+                            top: 0;
+                            left: 0;
+                        }
+                        .uploaded{
+                            h3{
+                                margin-bottom: 4px;
+                                font-weight: 500;
+                                font-size: rem(16);
+                                text-transform: uppercase;
+                                color: $brand;
+                            }
+                            .vehicle{
+                                height: 80px;
+                                width: auto;
+                                box-shadow: 2px 2px 15px rgba(#000000, 0.1);
+                            }
+                            #dri,#bin{
+                                box-shadow: 2px 2px 15px rgba(#000000, 0.1);
+                                padding: 3px 6px;
+                                background-color: $shade;
+                                max-width: max-content;
+                                span{
+                                    text-overflow: ellipsis;
+                                    white-space: nowrap;
+                                    overflow-x: hidden;
+                                }
+                            }
+                            #pho,#doc{
+                                position: relative;
+                                max-width: max-content;
+                                box-shadow: 2px 2px 15px rgba(#000000, 0.1);
+                                .cancel{
+                                    position: absolute;
+                                    top: 3px;
+                                    right: 3px;
+                                }
+                            }
+                            .cancel{
+                                height: 20px;
+                                width: auto;
+                                margin-left: 3px;
+                            }
+                        }
+                    }
+                    .m-container{
+                        img{
+                            height: 17px;
+                            width: auto;
+                            fill: $brand;
+                        }
+                        span{
+                            font-size: rem(10);
+                            color: $brand;
+                            margin-left: 7px;
+                            text-transform: uppercase;
+                            font-weight: 600;
+                        }
+                    }
+                }
+            }
+        }
+    }
+    .store-tabs{
+        grid-column: 1 / -1;
+        &-veil{
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+            background-color: rgba(255, 255, 255, 0.5);
+            cursor: wait;
+            z-index: 100;
+        }
+        &-items{   
+            position: relative;         
+            &-item{
+                margin-top: 10px;
+                box-shadow: 2px 2px 15px rgba(#000000, 0.1);
+                flex-direction: column;
+                position: relative;
+                @include tablet(){
+                    flex-direction: row;
+                }                
+                .car{                    
+                    &-image{
+                        width: 100%;
+                        height: 155px;
+                        overflow: hidden;
+                        position: relative;
+                        flex-shrink: 0;
+                        @include tablet(){
+                            width: 270px;
+                            height: auto;
+                        }
+                        .blured{
+                            position: absolute;
+                            width: 100%;
+                            height: 100%;
+                            background-size: cover;
+                            background-position: center;
+                        }
+                        &-img{
+                            position: absolute;
+                            top: 0;
+                            left: 0;
+                            width: 100%;
+                            height: 155px;
+                            overflow-x: hidden;
+                            @include tablet(){
+                                width: 270px;
+                                height: 100%;
+                            }
+                            img{
+                                height: 100%;
+                                width: auto;
+                            }
+                        }                        
+                    }
+                    &-info{
+                        padding: 15px;
+                        width: 100%;
+                        &-header{
+                            &-edit{
+                                margin:5px;
+                                @include tablet(){
+                                    margin: 0;
+                                }
+                                img{
+                                    height: 18px;
+                                    width: auto;
+                                }
+                                img:last-child{
+                                    margin-left: 15px;
+                                }
+                            }
+                            &-warning{
+                                margin:5px;
+                                @include tablet(){
+                                    margin: 0;
+                                }
+                                .img{
+                                    height: 18px;
+                                    width: 18px;
+                                    padding: 2px;
+                                    border: 1px solid #EB7D16;
+                                    border-radius: 3px;
+                                    overflow: hidden;
+                                    img{
+                                        height:-webkit-fill-available;
+                                    }
+                                }
+                                .img:last-child{
+                                    margin-left: 7px;
+                                }
+                            }
+                        }
+                        &-content{
+                            flex-wrap: wrap;
+                            &-item{
+                                width: 48%;
+                                margin-bottom: 15px;
+                                align-items: center;
+                                @include tablet(){
+                                    width: 31%
+                                }
+                                .title{
+                                    color: $brand;
+                                    font-weight: 600;
+                                    font-size: rem(14);
+                                    display: flex;
+                                    align-items: center;
+                                }
+                                .value{
+                                    margin-left: 8px;
+                                    font-size: rem(16);
+                                    display: flex;
+                                    align-items: center;
+                                }
+                            }
+                        }
+                        &-media{
+                            &-item{
+                                width: 100%;
+                                position: relative;
+                                background-color: $shade;
+                                padding: 6px 10px;
+                                border-radius: 4px;
+                                @include tablet(){
+                                    width: 31%
+                                }
+                                span{
+                                    font-weight: 600;
+                                    font-size: rem(16);
+                                    color: $brand;
+                                    text-transform: uppercase;
+                                }
+                                #eye{
+                                    height: 18px;
+                                    width: auto;
+                                    opacity: 1;
+                                    @include flow(0.15);
+                                }
+                                .view{
+                                    position: absolute;
+                                    left: 0;
+                                    width: 100%;
+                                    height: 0;
+                                    background-color: $shade;
+                                    padding: 5px;
+                                    border-radius: 0 0 4px 4px;
+                                    top: calc(100% - 10px);
+                                    z-index: 1;
+                                    @include flow(0.15);
+                                    .layer{
+                                        overflow-x: hidden;
+                                        height: 100%;
+                                        img{
+                                            height: 100%;
+                                            width: auto;
+                                        }
+                                    }
+                                }
+                                &:hover,&.spawn{
+                                    border-radius: 4px 4px 0 0;
+                                    #eye{
+                                        opacity: 0;
+                                        @include flow(0.15);
+                                    }
+                                    .view{
+                                        height: 150px;
+                                        @include flow(0.15);
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+            &-pagination{
+                margin-top: 28px;
+                justify-content: center;
+                @include tablet(){
+                    justify-content: flex-end;
+                }
+            }
+        }
+    }
+}

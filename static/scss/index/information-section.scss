@@ -1,0 +1,73 @@
+.information-section{
+    background-image: url(/images/information-back-mob.png);
+    background-size: cover;
+    background-position: center;
+    z-index: 2;
+    position: relative;
+    @include my(0);
+    @include py(40);
+    @include tablet(){
+        background-image: url(/images/information-back.png);
+        @include py(55);
+    }
+  h1,.h1{
+        font-weight: 800;
+        color: white;
+        text-transform: uppercase;
+        font-size: rem(22);  
+        margin-bottom: 15px;
+        @include tablet(){
+            font-size: rem(30);  
+            margin-bottom: 20px;  
+        }
+    }
+    p{
+        color: white;
+        font-size: rem(16);        
+    }
+    .article{
+        h2{
+            color: white;
+            margin-bottom: 7px;
+        }
+        ul,ol{
+            margin-bottom: 7px;
+            li{
+                color: white;
+            }
+        }
+        &-header{
+            padding: 20px 0;
+            b{
+                color: white; 
+            }           
+            img{
+                height: 16px;
+                margin-left: 10px;
+            }
+        }
+        &-container{
+            overflow: hidden;
+            height: 100px;
+            @include flow(0.15);
+        }
+    }
+    .more-read{
+        grid-column: 1 / -1;
+        grid-template-columns: 1fr;
+        @include tablet(){
+            grid-template-columns: repeat(2,1fr);
+        }
+        display: grid;
+        column-gap: 26px;
+        row-gap: 15px;
+    }
+    .more{
+        color: white;
+        font-size: rem(16);
+        text-transform: uppercase;
+        img{
+            height: 16px;
+        }
+    }
+}

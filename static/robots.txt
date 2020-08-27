@@ -1,0 +1,10 @@
+User-agent: *
+
+Disallow: /cabinet/
+Disallow: /*/cabinet/
+Disallow: *payment*
+Allow: *js*
+Allow: *css*
+
+Host: https://transtechsys.eu/
+Sitemap: https://transtechsys.eu/sitemap.xml

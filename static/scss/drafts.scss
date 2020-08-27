@@ -1,0 +1,113 @@
+@import '~/static/scss/default.scss';
+.drafts{
+    grid-column: 1 / -1 ;
+    .search{
+        margin-bottom: 20px;
+    }
+    .limit{
+        justify-content: center;
+        margin: 0 0 10px;
+        @include tablet(){
+            justify-content: flex-end;
+        }
+        span{
+            font-size: rem(16);
+            color: $dark-shade;
+            margin-right: 10px;
+        }
+        div{
+            user-select: none;
+          cursor: pointer;
+          @include flow(0.15);
+          color: black;
+          background-color: transparent;
+          padding: 3px 8px;
+          font-weight: 600;
+          &.current{
+            @include flow(0.15);
+              color: white;
+              background-color: $brand;
+          }
+          &:not(:last-child){
+              margin-right: 10px;
+          }  
+        }
+    }
+    .pagination{
+        margin-top: 20px;
+        justify-content: center;
+        @include tablet(){
+            justify-content: flex-end;
+        }
+    }
+    .items{  
+        position: relative;      
+        .item{
+            position: relative;
+            background-color: #f1f4fa;
+            justify-content: flex-start;
+            flex-direction: column;
+            padding: 22px 10px;
+            &:not(:first-child){
+                margin-top: 10px;
+                @include tablet(){
+                    margin-top: 15px;
+                }
+            }
+            @include tablet(){
+                flex-direction: row;
+                justify-content: space-between;
+                padding: 22px 30px;
+            }
+            .title{
+                color: black;
+                h3{
+                    font-weight: 500;
+                    font-size: rem(20);
+                    margin-bottom: 5px;
+                    overflow: hidden;
+                    text-overflow: ellipsis;
+                    white-space: nowrap;
+                }
+                div{
+                    font-size: rem(14);
+                    span{
+                        color: $brand;
+                    }
+                }
+            }
+            .control{
+                justify-content: space-between;
+                margin: 20px 0 0 0;
+                @include tablet(){
+                    justify-content: flex-end;
+                    margin: 0 0 0 80px;
+                }
+                .m-button{
+                    position: relative !important;
+                    bottom: auto !important;
+                    width: 100% !important;
+                    @include tablet(){
+                        width: 150px !important;
+                    }
+                }
+                .trash{
+                    background-color: white;
+                    box-shadow: 2px 2px 10px rgba(0,0,0,.1);
+                    width: 27px;
+                    height: 27px;
+                    border-radius: 50%;
+                    margin-left: 10px;
+                    flex-shrink: 0;
+                    @include tablet(){
+                        margin-left: 25px;
+                    }
+                    img{
+                        height: 13px;
+                        width: auto;
+                    }
+                }
+            }
+        }
+    }
+}

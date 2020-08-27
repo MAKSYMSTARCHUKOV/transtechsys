@@ -1,0 +1,785 @@
+@import '~/static/scss/role/company.scss';
+@keyframes refresh{
+    from{
+        transform: rotate(0deg);
+    }
+    to{
+        transform: rotate(180deg);
+    }
+}
+@-webkit-keyframes refresh{
+    from{
+        transform: rotate(0deg);
+    }
+    to{
+        transform: rotate(180deg);
+    }
+}
+@-moz-keyframes refresh{
+    from{
+        transform: rotate(0deg);
+    }
+    to{
+        transform: rotate(180deg);
+    }
+}
+.requests{
+    // height: 100%;
+    // max-height: 100vh;
+    // overflow: hidden;
+    // @include tablet(){
+    //     max-height: 890px;
+    // }
+    padding-top: 0px;
+    @include tablet(){
+        padding-top: 30px !important;
+    }
+
+    .member-online{
+        position: absolute;
+        top: 18px;
+        right: -2px;
+        width: 10px;
+        height: 10px;
+        background-color: $green;
+        border-radius: 50%;
+        border: 2px solid white;
+        @include flow;
+    }
+
+    .make-proposition, .cancel-proposition{
+        background-color: $light-shade;
+        border: 2px solid white;
+        box-shadow: 2px 2px 15px rgba($brand, .1);
+        position: absolute;
+        z-index: 101;
+        top: 0;
+        right: 0;
+        padding: 10px;
+        @include flow;
+        @include tablet(){
+           @include px(20);
+        }
+        .panel{
+            height: 25px;
+            margin-bottom: 7px;
+            .ok{
+                height: 25px;
+                border-radius: 15px;
+                overflow: hidden;
+                width: 0;
+                background-color: $green;
+                @include flow(0.15);
+                img{
+                    height: 16px;
+                    flex-shrink: 0;
+                } 
+            }
+            img{
+                height: 25px;
+                flex-shrink: 0;
+            }     
+        }
+        .inputs{
+            .m-input{
+                width: 80px;
+                margin-right: 5px;
+            }
+            .proposition-currency{
+                color: $brand;
+                font-size: rem(14);
+
+            }
+        }
+    }
+    .profile{
+        height: 100%;
+        padding-left: 30px !important;
+        padding-right: 30px !important;
+        .tabs{
+            margin-bottom: 20px;
+            @include tablet(){
+                margin-bottom: 10px;
+            }          
+                &-page{ 
+                    height: calc(100% - 159px); 
+                    @include tablet(){
+                        height: calc(100% - 100px);    
+                    }
+                    .header{
+                        display: grid;
+                        grid-template-columns: repeat(5,1fr) 200px 180px;
+                        box-shadow: 2px 2px 15px rgba($color: #000000, $alpha: .1);
+                        span{
+                            text-align: center;
+                            color: white;
+                            font-size: rem(18);
+                            font-weight: 600;                        
+                            background-color: $brand;
+                            align-content: center;
+                            @include py(15);
+                            display:flex;
+                            align-items: center;
+                            justify-content: center;
+                            img{
+                                width: 16px;
+                                @include flow(0.1);
+                                margin-right: 5px;
+                                &.DESC{
+                                    transform: rotate(0deg);
+                                }
+                                &.ASC{
+                                    transform: rotate(180deg);
+                                }
+                            }
+                        }
+                        .functions{
+                            #refresh{
+                                height: 20px;
+                                width: auto;
+                                cursor: pointer;
+                                &.refresh{
+                                    animation: 0.8s ease-out 0.5s infinite refresh;
+                                    -webkit-animation: 0.8s ease-out 0.5s infinite refresh;
+                                    -moz-animation: 0.8s ease-out 0.5s infinite refresh;
+                                }
+                            }
+                        }
+                    } 
+                    .request{
+                        font-size: rem(13);
+                        color: $dark-shade;
+                        box-shadow: 2px 2px 10px rgba($color: #000000, $alpha: .1);
+                        @include flow;  
+                        margin-top: 10px;     
+                        position: relative;                 
+                        @include tablet(){
+                            margin-top: 15px;
+                        }
+                        @include tablet(){
+                            display: grid;
+                            grid-template-columns: repeat(5,1fr) 380px;
+                            border-left: 2px solid transparent;
+                            border-right: 2px solid transparent;
+                            border-top: 2px solid transparent;    
+                        }
+                        &:last-child{
+                            margin-bottom: 15px;
+                        }
+                        
+                        .remove-request{
+                            position: absolute;
+                            background-color: $brand;
+                            width: 25px;
+                            height: 25px;
+                            right: 0;
+                            top: 0;
+                            img{
+                                height: 15px;
+                            }
+                        }
+
+                        .item{
+                            display: flex;
+                            flex-direction: column;
+                            padding-top: 0;
+                            padding-bottom: 15px;
+                            justify-self: center;
+                            @include tablet(){
+                                padding-top: 15px;
+                            }
+                            .iso{                                
+                                .flags{
+                                    margin-right: 20px;
+                                    img{
+                                        width: 15px;
+                                        &:first-child{
+                                            margin-right: 3px;
+                                        }
+                                    }
+                                }
+                                .abbr{
+                                    span{
+                                        color: $black;
+                                    }
+                                }
+                            }
+                            .countries{
+                                .from{
+                                    margin-right: 10px;
+                                }
+                            }
+                        }
+                        .contact{
+                            flex-direction: row;
+                            justify-content: space-between;
+                            @include tablet(){
+                                justify-self: start;
+
+                            }
+                            @include px(20);
+                            &-faces{
+                                margin-right: 7px;
+                                &-company{
+                                    margin-bottom: 10px;
+                                    &-bio{
+                                        text-align: left;
+                                    }
+                                }
+                                &-member{
+                                    span{
+                                        text-align: left;
+                                    }
+                                }
+                                &-avatar{
+                                    position: relative;
+                                    width: 30px;
+                                    height: 30px;
+                                    border-radius: 50%;
+                                    margin-right: 5px;
+                                    flex-shrink: 0;
+                                }
+                                @include tablet(){
+                                    margin-right: 15px;
+                                }
+                            }
+                            &-contacts{
+                                &-messengers,&-phones{
+                                    margin-bottom: 7px;
+                                }
+                                &-messengers{
+                                    a{
+                                        display: flex;
+                                        margin-left: 3px;
+                                        img{
+                                            height: 18px;
+                                            @include tablet(){
+                                                height: 16px;
+                                            }
+                                        }
+                                    }
+                                }
+                                .m-container{
+                                    margin-top: auto;
+                                    align-self: flex-end;
+                                }    
+                            }
+                        }
+                        .extra-info{
+                            grid-column: 1 / -1;
+                            background-color: white;
+                            width: calc(100% + 26px);
+                            margin-left: -13px;
+                            @include tablet(){
+                                width: 100%;
+                                margin-left: 0;
+                            }
+                            &-container{
+                                height: 0;
+                                overflow: hidden;
+                                @include flow;
+                                // @include tablet(){
+                                //     height: auto;
+                                //     overflow: auto;
+                                // }
+                            }
+                            &-content{
+                                padding: 10px;
+                                flex-direction: column;
+                                @include tablet(){
+                                    padding: 0 60px 20px;
+                                    flex-direction: row;
+                                }
+                                &-routes{
+                                    flex-shrink: 0;
+                                    margin-right: 100px;
+                                    &-route{
+                                        &:not(.main){
+                                            @include my(5);
+                                            @include tablet(){
+                                                @include my(10);
+                                            }
+                                        }
+                                        &:last-child{
+                                            margin-top: 5px;
+                                            @include tablet(){
+                                                margin-top: 10px;
+                                            }
+                                        }
+                                        &.main:nth-of-type(1){
+                                            margin-bottom: 5px;
+                                            @include tablet(){
+                                                margin-bottom: 10px;
+                                            }
+                                        }
+
+                                        &-marker{
+                                            margin-right: 5px;
+                                            position: relative;
+                                            @include tablet(){
+                                                margin-right: 7px;
+                                            }
+                                            &:before{
+                                                position: absolute;
+                                                background-color: $brand;
+                                                height: calc(100% + 11px);
+                                                width: 2px;
+                                                left: 50%;
+                                                top: -6px;
+                                                transform: translateX(-50%);
+                                                content: '';
+                                                @include tablet(){
+                                                    height: calc(100% + 22px);
+                                                    width: 2px;
+                                                    left: 50%;
+                                                    top: -11px;
+                                                }
+                                            }
+                                            &.main{
+                                                &:before{
+                                                    height: calc(50% + 6px);
+                                                    @include tablet(){
+                                                        height: calc(50% + 11px);
+                                                    }
+                                                }
+                                                &.from{
+                                                    &:before{
+                                                        bottom: -6px;
+                                                        top: auto;
+                                                        @include tablet(){
+                                                            bottom: -11px;
+                                                        }
+                                                    }         
+                                                }
+                                            }
+                                            .circle{
+                                                position: relative;
+                                                width: 16px;
+                                                border-radius: 50%;
+                                                height: 16px;
+                                                background-color: white;
+                                                border: 2px solid $brand;
+                                                color: white;
+                                                &.main{
+                                                    display: flex;
+                                                    align-items: center;
+                                                    justify-content: center;
+                                                    background-color: $brand !important;
+                                                    font-weight: bold;
+                                                }
+                                            }
+                                        }
+                                        &-data{
+                                            .h{
+                                                color: black;
+                                            }
+                                        }
+                                    }
+                                }
+                                &-info{
+                                    width: 100%;
+                                    display: grid;
+                                    grid-template-columns: max-content 1fr;
+                                    column-gap: 15px;
+                                    row-gap: 10px;
+                                    align-content: start;
+                                    padding-left: 10px;
+                                    padding-top: 20px;
+                                    @include tablet(){
+                                        column-gap: 34px;
+                                        row-gap: 20px;
+                                        padding-left: 0;
+                                        padding-top: 0;
+                                    }
+                                    &-header{
+                                        font-size: rem(12);
+                                        color: $brand;
+                                        font-weight: normal;
+                                        @include tablet(){
+                                            font-size: rem(14);
+                                            font-weight: bold;
+                                        }
+                                    }
+                                    &-data{
+                                        font-size: rem(12);
+                                        color: black;
+                                        font-weight: normal;
+                                        @include tablet(){
+                                            font-size: rem(14);
+                                            font-weight: bold;
+                                        }
+                                        &.textarea{
+                                            margin-top: -8px;
+                                            grid-column: 1 / -1;
+                                            @include tablet(){
+                                                margin-top: -16px;
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                            &-expand{
+                                font-size: rem(14);
+                                padding: 5px 30px;
+                                background-color: $brand;
+                                color: white;
+                                margin-left: -2px;
+                                width: calc(100% + 4px);
+                                @include flow;
+                                .select{
+                                    height: 8px;
+                                    width: 8px;
+                                    background-position: center;
+                                    background-size: cover;
+                                    background-image: url(/images/icons/chevron-down-white.svg);
+                                    margin-left: auto;
+                                    @include flow;
+                                    transform: rotate(0deg);
+                                    @include tablet(){
+                                        margin-left: 5px;
+                                        background-image: url(/images/icons/select-white.svg);    
+                                    }
+                                    
+                                }
+                                &.shown{
+                                    .select{
+                                        transform: rotate(180deg);
+                                    }
+                                }
+                            }
+                        }
+                        .propositions{  
+                            margin-left: -2px;
+                            width: calc(100% + 4px);
+                            grid-column: 1 / -1;  
+                            margin-top: 5px;   
+                            &-header{
+                                font-size: rem(14);
+                                padding: 5px 30px;
+                                background-color: $brand;
+                                color: white;
+                                @include flow;
+                                @include tablet(){
+                                    color: $black;
+                                    background-color: #eef0f5;    
+                                }
+                                .quantity{
+                                    color: white;
+                                    @include tablet(){
+                                        color: $brand;
+                                        @include flow;    
+                                    }
+                                }
+                                .attention,.select{
+                                    height: 16px;
+                                    width: 16px;
+                                    background-position: center;
+                                    background-size: contain;
+                                }
+                                .attention{
+                                    margin-right: 10px;
+                                    background-image: url(/images/icons/attention-white.svg);
+                                    @include tablet(){
+                                        background-image: url(/images/icons/attention.svg);    
+                                    }
+                                    &.accepted{
+                                        background-image: url(/images/icons/network-white.svg);
+                                    @include tablet(){
+                                        background-image: url(/images/icons/network.svg);    
+                                    }    
+                                    }
+                                    &.history{
+                                        background-image: url(/images/icons/scales-white.svg);
+                                    @include tablet(){
+                                        background-image: url(/images/icons/scales.svg);    
+                                    }    
+                                    }
+                                }
+                                .select{
+                                    height: 8px;
+                                    width: 8px;
+                                    background-image: url(/images/icons/chevron-down-white.svg);
+                                    margin-left: auto;
+                                    @include tablet(){
+                                        margin-left: 5px;
+                                        background-image: url(/images/icons/select.svg);    
+                                    }
+                                    
+                                }
+                            }
+                            &-content{
+                                background-color: #eef0f5;
+                                @include flow;
+                                height: 0;  
+                                overflow: hidden;   
+                                border-left: 2px solid #eef0f5;
+                                border-right: 2px solid #eef0f5;
+                                border-bottom: 2px solid #eef0f5;  
+                                @include tablet(){
+                                    @include px(30);
+                                }
+                                &-item{
+                                    display: grid;
+                                    grid-template-columns:auto max-content;
+                                    margin-top: 5px;
+                                    &:last-child{
+                                        margin-bottom: 5px;
+                                    }
+                                    @include tablet(){
+                                        margin-top: 10px;
+                                        align-items: center;
+                                        grid-template-columns: min-content max-content auto max-content;
+                                        &:last-child{
+                                            margin-bottom: 10px;
+                                        }
+                                    }
+                                    .avatar{
+                                        position: relative;
+                                        width: 27px;
+                                        height: 27px;
+                                        border-radius: 50%;
+                                        box-shadow: 2px 2px 10px rgba($color: #000000, $alpha: .1);
+                                        background-position: center;
+                                        background-size: cover;
+                                        background-image: url(/images/void-img.png);
+                                        @include tablet(){
+                                            margin-right: 8px;
+                                        }
+                                    }
+                                    .name,.bid{
+                                        font-size: rem(14);
+                                    }
+                                    .name{
+                                        overflow: hidden;
+                                        white-space: nowrap;
+                                        text-overflow: ellipsis;
+                                    }
+                                    .bid{
+                                        color: $brand;
+                                        @include tablet(){
+                                            margin-left: 10px;
+                                        }                                        
+                                    }
+                                    .manipulation{
+                                        .m-container:not(:last-child){
+                                            @include tablet(){
+                                                margin-right: 40px;
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                        &.active{
+                            @include tablet(){
+                                border-color: $brand;    
+                            }
+                            @include flow;
+                            .m-header{
+                                background-color: $brand;
+                                @include flow;
+                                .m-grid{
+                                    color:white;
+                                    @include flow;
+                                    .iso{
+                                        color: white !important;
+                                    }
+                                }
+                                .line{
+                                    .bubble{
+                                        background-color: white;
+                                        @include flow;
+                                    }
+                                    &:before{
+                                        background-color: white;
+                                        @include flow;
+                                    }
+                                }
+                            }
+                            .expand-info{
+                                display: none;
+                            }
+                            .propositions{
+                                &-header{
+                                    background-color: $brand;
+                                    color: white;
+                                    @include flow;
+                                    .quantity{
+                                        color: white;
+                                        @include flow;
+                                    }
+                                    .attention{
+                                        background-image: url(/images/icons/attention-white.svg);
+                                        &.accepted{
+                                            background-image: url(/images/icons/network-white.svg);
+                                        }
+                                        &.history{
+                                            background-image: url(/images/icons/scales-white.svg);
+                                        }
+                                    }
+                                    .select{
+                                        background-image: url(/images/icons/chevron-down-white.svg);
+                                        @include tablet(){
+                                            background-image: url(/images/icons/select-white.svg);    
+                                        }
+                                        
+                                    }
+                                }
+                                &-content{
+                                    @include tablet(){
+                                        @include flow;
+                                        border-left: 2px solid $brand;
+                                        border-right: 2px solid $brand;
+                                        border-bottom: 2px solid $brand;
+                                    }
+                                }
+                            }
+                        }
+                        .m-header{
+                            padding: 15px;
+                            background-color: white;
+                            @include flow;
+                            .m-grid{
+                                display: grid;
+                                align-items: center;
+                                column-gap: 15px;
+                                font-size: rem(13);
+                                color: $dark-shade;
+                                @include flow;
+                                [class*="from"]{
+                                    justify-self: end;
+                                }
+                                [class*="to"]{
+                                    justify-self: start;
+                                }
+                                &.m-iso{
+                                    grid-template-columns: 1fr 100px 1fr;
+                                    img{
+                                        margin-right: 5px;
+                                        height: 10px;
+                                    }
+                                    .iso{
+                                        margin-right: 5px;
+                                        color: $black;
+                                    }
+                                }
+                                &.m-date{
+                                    margin-top: 5px;
+                                    grid-template-columns: 1fr 86px 1fr;
+                                    .string{
+                                        text-align: center;
+                                        grid-column: 1 / -1;
+                                    }
+                                }
+                            }
+                            .line{
+                                @include px(10);
+                                @include flow;
+                                position: relative;
+                                .bubble{
+                                    width: 7px;
+                                    height: 7px;
+                                    background-color: $shade;
+                                    border-radius: 50%;
+                                    @include flow;
+                                }
+                                &:before{
+                                    position: absolute;
+                                    @include flow;
+                                    content: '';
+                                    width: 100%;
+                                    height: 1px;
+                                    background-color: $shade;
+                                    left: 0;
+                                }
+                            }
+                        } 
+                        .m-container{
+                            &-body{
+                                background-color: #eef0f5;
+                                color: $dark-shade;
+                                @include px(15);
+                                &.hidden{
+                                    background-color: white;
+                                    height: 0;
+                                    overflow: hidden;
+                                    @include flow;                                 
+                                    .propositions{
+                                        margin-left: -15px;
+                                        width: calc(100% + 30px);
+                                        &-header{
+                                            padding: 5px 15px;
+                                        }
+                                        &-content-item{
+                                            @include mx(15);
+                                        }
+                                        .left-item{
+                                            position: relative;
+                                            display: grid;
+                                            grid-template: min-content max-content;
+                                            justify-content: flex-start;
+                                            .avatar{
+                                                position: relative;
+                                                grid-row: 1 / span 2;
+                                                align-self: center;
+                                                margin-right: 10px;
+                                            }
+                                            .name{
+                                                align-self: end;
+                                                grid-row: 1 / span 1;
+                                                grid-column: 2;
+                                            }
+                                            .bid{
+                                                align-self: start;
+                                                grid-row: 2 / span 1;
+                                                grid-column: 2;
+                                            }
+                                        }
+                                        .manipulation{
+                                            flex-direction: column;
+                                            align-items: flex-start;
+                                            justify-content: space-around;
+                                            .m-container{
+                                                margin-top: 5px;
+                                                &:last-child{
+                                                    margin-bottom: 5px;
+                                                }
+                                            }
+                                        }
+                                    }                                    
+                                }
+                            }
+                            &-item{
+                                @include py(5);
+                                border-bottom: 1px solid $input;
+                                &:last-child{
+                                    border-bottom: 0;
+                                }
+                                &-header{
+                                    margin-right: 20px;
+                                    color: $brand;
+                                }
+                                div:last-child{
+                                    text-align: right;
+                                }
+                            }                            
+                        }  
+                        .expand-info{
+                            background-color: $brand;
+                            @include py(3);
+                            img{
+                                width: 8px;
+                            }
+                        }        
+                    }   
+                    .pages{
+                        justify-content: center;
+                        margin-top: 15px;
+                        @include tablet(){
+                            justify-content: flex-end;
+                        }
+                    }                                  
+                }
+        }
+    }
+}

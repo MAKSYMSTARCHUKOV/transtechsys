@@ -1,0 +1,18 @@
+@import '~/static/scss/_var.scss';
+@import '~/static/scss/_mix.scss';
+
+@include width;
+
+.r-section{
+    flex-shrink: 0;
+    @include px(50);
+    @include tablet(){
+        @include px(130);
+    }
+    @include screen(){
+        padding-left: 30px;
+    }
+    @include extra(){
+        @include px(200);
+    }
+}

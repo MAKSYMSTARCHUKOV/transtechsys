@@ -1,0 +1,162 @@
+@import '~/static/scss/role/company.scss';
+
+.feedback{
+    .search{
+        margin-bottom: 8px;
+    }
+    .review{
+        &-item{
+            box-shadow: 2px 2px 15px rgba(0, 0, 0, 0.1);
+            margin-top: 20px;
+            flex-direction: column;
+            position: relative;
+            @include tablet(){
+                flex-direction: row;
+            }
+            .item{
+                &-avatar{
+                    flex-shrink: 0;
+                    background-size: cover;
+                    background-position: center;
+                    width: 100%;
+                    height: 140px;        
+                    background-image: url(/images/void-company.png);            
+                    @include tablet(){
+                        min-height: 225px;
+                        width: 267px;
+                        height: auto;
+                    }
+                }
+                &-container{
+                    padding: 30px 18px;
+                    position: relative;
+                    width: 100%;
+                    @include tablet(){
+                        padding: 25px;
+                    }
+                }
+                &-header{
+                    margin-bottom: 10px;
+                    .h3{
+                        color: $black;
+                        font-weight: 800;
+                        font-size: rem(18);
+                        @include tablet(){
+                            font-size: rem(22);
+                        }
+                    }
+                    .rate{
+                        .star{
+                            background-image: url(/images/icons/rate-grey.svg);
+                            background-size: cover;
+                            background-repeat: no-repeat;
+                            background-position: center;
+                            width: 20px;
+                            height: 20px;
+                            &.active {
+                                background-image: url(/images/icons/rate-active.svg);
+                            }
+                        }
+                    }
+                    .reaction{
+                        padding: 6px 17px;
+                        border-radius: 5px;
+                        background-color: $brand;
+                        position: absolute;
+                        top: -15px;
+                        @include tablet(){
+                            position: relative;
+                            top: 0;
+                            background-color: white;
+                        }
+                        [class*="liked"]{
+                            width: 18px;
+                            height: 18px;
+                            background-position: center;
+                            background-size: cover;
+                            background-image: url(/images/icons/feedback/like-white.svg);
+                            @include tablet(){
+                                background-image: url(/images/icons/feedback/like-brand.svg);
+                            }
+                            &:first-child{
+                                margin-right: 15px;
+                                @include tablet(){
+                                    margin-right: 30px;
+                                }
+                            }
+                            &.true{
+                                background-image: url(/images/icons/feedback/like-white-active.svg);
+                                @include tablet(){
+                                    background-image: url(/images/icons/feedback/like-brand-active.svg);
+                                }    
+                            }
+                        }
+                        .not-liked{
+                            transform: rotate(180deg);
+                        }
+                    }
+                }
+                &-description{
+                    margin-bottom: 20px;
+                    @include tablet(){
+                        margin-bottom: 13px;
+                    }
+                }
+                &-review{
+                    .feedback-item{
+                        &:not(:first-child){
+                            margin-top: 8px;
+                        }
+                    }
+                    .review{
+                        &-avatar{
+                            flex-shrink: 0;
+                            width: 43px;
+                            height: 43px;
+                            border-radius: 50%;
+                            background-size: cover;
+                            background-position: center;
+                            background-image: url(/images/void-img.png);
+                            margin-right: 12px;
+                        }
+                        &-content{
+                            flex-direction: column;
+                            width: 100%;
+                            @include tablet(){
+                                flex-direction: row;
+                                justify-content: space-between;
+                            }
+                            .content{
+                                &-info{
+                                    margin-bottom: 10px;
+                                    @include tablet(){
+                                        margin-bottom: 0;
+                                        margin-right: 10px;
+                                    }
+                                    .info{
+                                        &-name{
+                                            margin-bottom: 5px;
+                                            font-weight: 700;
+                                            font-size: rem(14);
+                                        }
+                                        &-text{
+                                            font-style: italic;
+                                            color: $dark-shade;
+                                            line-height: 100%;
+                                            font-size: rem(14);
+                                        }
+                                    }
+                                }
+                                &-date{
+                                    color: $brand;
+                                    font-weight: 600;
+                                    font-size: rem(14);
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

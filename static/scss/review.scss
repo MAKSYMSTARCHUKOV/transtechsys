@@ -1,0 +1,51 @@
+@import '~/static/scss/authorization.scss';
+
+.review{
+    grid-column: 1 / -1;
+    .h3{
+        font-weight: 700;
+        color: $dark-shade;
+        text-transform: uppercase;
+        font-size: rem(20);
+        margin-bottom: 10px;
+    }
+    .likes{
+        padding: 5px;
+        border: 1px solid transparent;
+        @include flow(0.15);
+        &.incorrect{
+            border-color: $error;
+        }
+        label{
+            .img{
+                cursor: pointer;
+                background-position: center;
+                background-size: cover;
+                height: 35px;
+                width: 35px;
+            }
+            &:nth-of-type(1){
+                margin-right: 0;
+                @include tablet(){
+                    margin-right: 20px;
+                }
+            }
+            &:nth-of-type(2){
+                .img{
+                    transform: rotate(180deg);
+                }
+            }
+        }
+    }
+    .m-buttons{
+        margin-top: 10px;
+        .m-button{
+            position: relative !important;
+            bottom: 0 !important;
+            width: 100% !important;
+            @include tablet(){
+                width: 180px !important;
+            }
+        }
+    }
+}
